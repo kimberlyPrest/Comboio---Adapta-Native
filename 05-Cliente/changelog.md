@@ -1,5 +1,10 @@
 # Histórico do pacote do cliente
 
+## 29/09/2026 — Progresso da implementação
+
+- 2026-09-29 · [Jean Borges Tavares] · Task F1-001 concluída: conexão Skip↔Supabase verificada por tela de teste (`/connection-test`, projeto Skip 62225, versão 0.0.4, QA verde) lendo o projeto Supabase `lwkqsukxefwpreqjdkzg` somente com a chave publicável (anon); S101 verde (Conexão OK, resposta PGRST205 do próprio banco) e caminho de erro exercitado (falha de rede exibida com data/hora); teste humano aprovado pelo champion no preview. Evidências: `artifacts/f1-001-evidencia.md` e capturas `f1-001-*.png` no workspace ETHOS; rota no preview `login-posto-comboio-a8a05--preview.goskip.app`.
+- Progresso da fase 1: 1/24 tasks concluídas (4%); F1-002 é a próxima elegível.
+
 ## 29/09/2026 — Adequação documental de SPECs e tasks
 
 - Quatro SPECs reformatadas com contexto, degrau, limites, dados, fluxo, checklist, critérios, TDD, handoff, tasks vinculadas e emendas.

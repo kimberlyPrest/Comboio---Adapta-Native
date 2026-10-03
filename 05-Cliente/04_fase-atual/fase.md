@@ -1,13 +1,13 @@
 # Fase 1 — tabela operacional de tasks
 
-Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **1 de 24 tasks concluída (F1-001, 29/09/2026); as demais estão planejadas.** A sequência indica pré-condições: apenas tarefas com todas as dependências fechadas podem entrar na leva ativa. Status `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Cada task aponta para uma única SPEC e uma subseção exata. Não criar conta AWS nem comprar equipamento nesta fase. Uso real depende de F1-024.
+Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **2 de 24 tasks concluídas (F1-001 em 29/09 e F1-002 em 03/10/2026); as demais estão planejadas.** A sequência indica pré-condições: apenas tarefas com todas as dependências fechadas podem entrar na leva ativa. Status `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Cada task aponta para uma única SPEC e uma subseção exata. Não criar conta AWS nem comprar equipamento nesta fase. Uso real depende de F1-024.
 
 ## Plataforma e acesso — SPEC-F1-01
 
 | ID | Task e subseção da SPEC | Dono | SPEC | Critério binário | Recorte da prova | Evidência esperada | Pré-condições | Ponto de parada | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | F1-001 | Conectar Skip/Supabase — **Limites e dependências; Dados e integrações**. | Implementação | F1-01 | CA-F1-01-01: tela de teste lê Supabase sem segredo no browser. | S101; GREEN da SPEC | Captura, IDs de ambiente e configuração sem segredos. | Contas autorizadas da Comboio. | Sem acesso/titularidade; não criar em conta pessoal. | ☑ 29/09/2026 |
-| F1-002 | Migrar perfis/auditoria e RLS — **Dados e integrações; Fluxo e regras**. | Implementação | F1-01 | CA-F1-01-02/03: migração e negação de anônimo/cross-tenant passam. | S102/S104; RED→GREEN | SQL versionado e resultado `supabase test db`. | F1-001 concluída. | RLS ausente ou segredo exposto. | ☐ |
+| F1-002 | Migrar perfis/auditoria e RLS — **Dados e integrações; Fluxo e regras**. | Implementação | F1-01 | CA-F1-01-02/03: migração e negação de anônimo/cross-tenant passam. | S102/S104; RED→GREEN | SQL versionado e resultado `supabase test db`. | F1-001 concluída. | RLS ausente ou segredo exposto. | ☑ 03/10/2026 |
 | F1-003 | Configurar Auth/telas login — **Fluxo e regras; Handoff e operação**. | Implementação | F1-01 | CA-F1-01-02/05: pendente/inativo não opera e logout revoga. | S103; GREEN | Roteiro e capturas de sessão/erro. | F1-002 concluída. | Senha em tabela própria ou pendente com acesso. | ☐ |
 | F1-004 | Autorização e convite de interno — **Dados e integrações; Fluxo e regras**. | Implementação | F1-01 | CA-F1-01-03/04: externo não lê alheio; só admin convida/desativa. | S104/S105; REGRESSÃO | Policies, função, auditoria e teste direto. | F1-003 concluída. | Controle apenas visual ou chave secreta no Skip. | ☐ |
 | F1-005 | Homes por perfil — **Resultado observável; Critérios de aceite**. | Implementação | F1-01 | CA-F1-01-05: perfis entram/saem em celular e desktop. | S103/S105; GREEN | Capturas/roteiro UI por perfil. | F1-004 concluída. | Autoinscrição de usuário interno. | ☐ |

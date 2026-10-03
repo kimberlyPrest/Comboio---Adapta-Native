@@ -1,5 +1,11 @@
 # Histórico do pacote do cliente
 
+## 03/10/2026 — Progresso da implementação
+
+- 2026-10-03 · [Jean Borges Tavares] · Task F1-002 concluída: migrações `f1_002_profiles_company_users_audit_rls` + endurecimento `f1_002_harden_functions_v2` aplicadas no Supabase `lwkqsukxefwpreqjdkzg` (enums, `profiles`, `company_users`, `companies`, `audit_events`, RLS em todas, auditoria transacional por trigger, admin inicial por procedimento controlado, fixtures fictícios A/B/motorista); RED comprovado (anon leu tabela sem RLS via REST) e GREEN verificado por SQL/REST diretos: S102 (anon `[]` nas 4 tabelas), S104 (Empresa A só a própria; Motorista A só si; auditoria só admin), INSERT anônimo negado (42501); advisors críticos limpos pós-revoke de PUBLIC. Teste humano aprovado pelo champion em 03/10 (login no preview com fixture + SQL de isolamento). SQL versionado no Supabase; evidência no workspace ETHOS (`artifacts/f1-002-evidencia.md`).
+- 2026-10-03 · [Jean Borges Tavares] · DEBUG task F1-002: teste humano relatado como falha sem descrição → não reproduzido em 9 provas de regressão (S102/S104/insert/login/auditoria verdes em 03/10 08:15) → roteiro de teste reformulado em caminho único (Skip primeiro, SQL opcional); teste reaprovado. Corrigido.
+- Progresso da fase 1: 2/24 (8%); F1-003 é a próxima elegível.
+
 ## 29/09/2026 — Progresso da implementação
 
 - 2026-09-29 · [Jean Borges Tavares] · Task F1-001 concluída: conexão Skip↔Supabase verificada por tela de teste (`/connection-test`, projeto Skip 62225, versão 0.0.4, QA verde) lendo o projeto Supabase `lwkqsukxefwpreqjdkzg` somente com a chave publicável (anon); S101 verde (Conexão OK, resposta PGRST205 do próprio banco) e caminho de erro exercitado (falha de rede exibida com data/hora); teste humano aprovado pelo champion no preview. Evidências: `artifacts/f1-001-evidencia.md` e capturas `f1-001-*.png` no workspace ETHOS; rota no preview `login-posto-comboio-a8a05--preview.goskip.app`.

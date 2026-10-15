@@ -1,5 +1,10 @@
 # Histórico do pacote do cliente
 
+## 15/10/2026 — F1-006 concluída
+
+- 2026-10-15 · [Jean Borges Tavares] · Task F1-006 concluída: migrações `f1_006_cadastros_vinculos_v2` + `f1_006_harden_admin_rpcs_anon` no Supabase `lwkqsukxefwpreqjdkzg` (aditivas, fixtures F1-002 intactas) — empresas completas (`cnpj_normalized` UNIQUE, status pending/active/rejected/inactive, trilha de revisão `reviewed_by/at/reason`), `drivers` (1:1 com `auth.users`, `cpf_normalized` UNIQUE), `vehicles` (`plate_normalized` UNIQUE, truck/car/motorcycle), 3 tabelas de vínculo com validade (histórico encerra-se, nunca se apaga), RLS por perfil nas 5 superfícies (motorista vê só si; empresa vê só o próprio contexto; internos gerenciam), auditoria transacional por trigger no padrão F1-002, índices. Provas: 13 verdes — RED (42P01 tabela inexistente), CNPJ/CPF/placa duplicados rejeitados (23505), concorrência de placa com exatamente 1 vencedor (201×409), anon `[]` nas 5 tabelas, Empresa A `[]`, motorista A vê só A e PATCH na linha de B negado, INSERT de veículo por motorista 403, auditoria gravando, anon→RPC admin 42501 (endurecimento), admin→RPC validado. Achado dos advisors corrigido: `anon` tinha EXECUTE explícito nas RPCs admin (default privileges do Supabase; revoke de PUBLIC não cobre grants explícitos) — fechado na migração de endurecimento. Teste humano aprovado pelo champion em 15/10 19:01 (roteiro SQL no painel; 1º relato de erro na query 3 era colagem das queries no mesmo batch — o erro proposital da query 2 abortava o script; sem defeito). Evidência: `artifacts/f1-006-evidencia.md` (workspace ETHOS). Fixtures fictícias: motoristas A/B, Transportadora Beta, veículos ABC1D23/RACE0001.
+- Progresso da fase 1: 6/24 (25%); F1-007 é a próxima elegível.
+
 ## 15/10/2026 — F1-005 concluída
 
 - 2026-10-15 · [Jean Borges Tavares] · Task F1-005 concluída: homes por perfil no Skip 62225 (v0.0.8, QA verde) — `Dashboard` ramifica por `profile.role` APÓS o gate de segurança (pendente/desativado/sem sessão seguem na frente): home Admin (verde, com administração de internos), Operador (azul), Empresa (roxo) e Motorista (âmbar). Administração de internos (tela-base da SPEC-F1-01): lista via RLS `profiles_select_self_or_internal`, convite/ativação/desativação via Edge Function `admin-manage-internal` da F1-004 com JWT do chamador (service_role fora do navegador); admin não desativa a si mesmo; mensagens de erro próprias sem dado de terceiros. Provas: 11 verdes — login por perfil (API), gate pending/desativado intacto, convite pela tela cria `pending` com auditoria (ator = admin), operador loga e vê ZERO administração (S105 UI), sessão removida + `/dashboard` redireciona ao login (CA-F1-01-05), capturas mobile 390px e desktop 1440px. Sem migração de banco, sem autoinscrição de interno (ponto de parada). Teste humano aprovado pelo champion em 15/10 18:40. Evidência: `artifacts/f1-005-evidencia.md` (workspace ETHOS). SPEC-F1-01 100% concluída.
@@ -31,7 +36,7 @@
 ## 29/09/2026 — Adequação documental de SPECs e tasks
 
 - Quatro SPECs reformatadas com contexto, degrau, limites, dados, fluxo, checklist, critérios, TDD, handoff, tasks vinculadas e emendas.
-- Tabela de 24 tasks ampliada com dono, SPEC, critério, recorte da prova, evidência, pré-condições, ponto de parada e status.
+- Tabela de 24 tasks ampliada com dono, SPEC, critério, critério, recorte da prova, evidência, pré-condições, ponto de parada e status.
 - Matriz de rastreabilidade da fase 1 incluída e cópias sincronizadas com o plano. Escopo e gates preservados sem alteração.
 
 ## 29/09/2026 — Completação da pasta operacional

@@ -8,3 +8,5 @@
 - 2026-10-15T17:30:00-03:00 · task F1-004 · capturado · AP-2026-10-15-1730-rollback-camada-faltante.md
 - 2026-10-15T17:31:00-03:00 · task F1-004 · capturado · AP-2026-10-15-1731-ator-via-jwt-chamador.md
 - 2026-10-15T18:40:00-03:00 · task F1-005 · capturado · AP-2026-10-15-1840-snapshot-vs-captura.md
+- 2026-10-15T19:05:00-03:00 · task F1-006 · capturado · AP-2026-10-15-1905-negacao-em-transacao-separada.md
+- 2026-10-15T19:06:00-03:00 · task F1-006 · capturado · AP-2026-10-15-1906-revoke-nao-cobre-grants-explicitos.md

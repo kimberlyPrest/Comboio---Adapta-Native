@@ -1,5 +1,9 @@
 # Histórico do pacote do cliente
 
+## 15/10/2026 — DEBUG F1-003
+
+- 2026-10-15 · [Jean Borges Tavares] · DEBUG task F1-003: teste humano (login fixture desativada) devolveu "Failed to fetch" → causa raiz: indisponibilidade do Supabase no momento do teste (confirmada por 3 caminhos independentes: DNS local fora para *.supabase.co, MCP do banco com connection timeout e navegador do champion com o mesmo erro) — não é defeito do gate de perfil; defeito paralelo corrigido: falha de rede exibia erro cru em inglês nas telas de login/cadastro/recuperação → mensagem própria em português (v0.0.6, QA verde) → aguardando janela com o serviço de volta para novo teste humano.
+
 ## 03/10/2026 — Progresso da implementação
 
 - 2026-10-03 · [Jean Borges Tavares] · Task F1-002 concluída: migrações `f1_002_profiles_company_users_audit_rls` + endurecimento `f1_002_harden_functions_v2` aplicadas no Supabase `lwkqsukxefwpreqjdkzg` (enums, `profiles`, `company_users`, `companies`, `audit_events`, RLS em todas, auditoria transacional por trigger, admin inicial por procedimento controlado, fixtures fictícios A/B/motorista); RED comprovado (anon leu tabela sem RLS via REST) e GREEN verificado por SQL/REST diretos: S102 (anon `[]` nas 4 tabelas), S104 (Empresa A só a própria; Motorista A só si; auditoria só admin), INSERT anônimo negado (42501); advisors críticos limpos pós-revoke de PUBLIC. Teste humano aprovado pelo champion em 03/10 (login no preview com fixture + SQL de isolamento). SQL versionado no Supabase; evidência no workspace ETHOS (`artifacts/f1-002-evidencia.md`).

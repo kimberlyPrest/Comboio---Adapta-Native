@@ -1,8 +1,11 @@
 # Histórico do pacote do cliente
 
-## 15/10/2026 — DEBUG F1-003
+## 15/10/2026 — F1-003 concluída + DEBUG
 
-- 2026-10-15 · [Jean Borges Tavares] · DEBUG task F1-003: teste humano (login fixture desativada) devolveu "Failed to fetch" → causa raiz: indisponibilidade do Supabase no momento do teste (confirmada por 3 caminhos independentes: DNS local fora para *.supabase.co, MCP do banco com connection timeout e navegador do champion com o mesmo erro) — não é defeito do gate de perfil; defeito paralelo corrigido: falha de rede exibia erro cru em inglês nas telas de login/cadastro/recuperação → mensagem própria em português (v0.0.6, QA verde) → aguardando janela com o serviço de volta para novo teste humano.
+- 2026-10-15 · [Jean Borges Tavares] · Task F1-003 concluída: gate de perfil no Skip 62225 (v0.0.7, QA verde) — sessão consulta `profiles`: `disabled` é deslogado com aviso, `pending` não opera ("Aguardando aprovação"), falha na leitura do perfil bloqueia operação; sem sessão não há acesso (logout encerra de fato); senha mínima 8 no cadastro; falha de rede traduzida para mensagem própria. Provas S103: 8 verdes (4 API + 4 UI) — pendente/desativado/ativo com perfis corretos, credencial inválida genérica, logout revoga, `/dashboard` sem sessão redireciona. Teste humano aprovado pelo champion em 15/10 16:37. Evidência: `artifacts/f1-003-evidencia.md` (workspace ETHOS). Pendência de painel: ativar leaked-password protection (Security → Authentication) — não exposta pelo MCP.
+- 2026-10-15 · [Jean Borges Tavares] · DEBUG task F1-003 (2º ciclo): relato "senha incorreta" → credenciais revalidadas por API nas três fixtures (todas LOGIN OK) → causa: digitação/cópia da senha no formulário (caractere `!` perdido ou espaço extra), não defeito → credenciais reentregues em blocos copiáveis linha a linha → teste aprovado.
+- 2026-10-15 · [Jean Borges Tavares] · DEBUG task F1-003 (1º ciclo): "Failed to fetch" no login → causa raiz: Supabase indisponível (521/Bad Gateway) confirmada por 3 caminhos independentes → defeitos próprios achados e corrigidos: erro de rede cru em inglês (v0.0.6) e logout sem encerrar acesso no dashboard (v0.0.7) → ver `06_notas/debug/debug-2026-10-15-f1-003-supabase-indisponivel.md`.
+- Progresso da fase 1: 3/24 (12%); F1-004 é a próxima elegível.
 
 ## 03/10/2026 — Progresso da implementação
 

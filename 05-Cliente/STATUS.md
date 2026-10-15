@@ -1,11 +1,11 @@
 # Status da pasta do cliente
 
-Atualizado em 03/10/2026.
+Atualizado em 15/10/2026.
 
 - [Escopo definitivo completo](01_projeto/02-Escopo-Definitivo.md) incluído e conferido contra a fonte.
 - Quatro SPECs e 24 tasks da fase 1 incluídas em `04_fase-atual/`.
 - SPECs e tasks seguem a estrutura documental do plugin; a matriz de rastreabilidade está em `04_fase-atual/matriz-de-rastreabilidade.md`. Todos os 24 IDs estão sincronizados com o plano.
 - Stack: Skip + Supabase. Desenvolvimento da fase 1 liberado; go-live não liberado até F1-024.
-- **Progresso da fase 1: 2/24 tasks concluídas (8%). F1-001 (29/09) e F1-002 (implementada 02/10, aceite humano 03/10) concluídas; F1-003 é a próxima elegível.**
+- **Progresso da fase 1: 3/24 tasks concluídas (12%). F1-001 (29/09), F1-002 (03/10) e F1-003 (15/10/2026) concluídas com teste humano aprovado; F1-004 é a próxima elegível.**
 - Fases 2–4 estão no roadmap, ainda sem liberação de implementação.
 - Pasta local, não publicada, sem credenciais ou dados pessoais reais.

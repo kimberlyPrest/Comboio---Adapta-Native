@@ -6,6 +6,6 @@ Atualizado em 15/10/2026.
 - Quatro SPECs e 24 tasks da fase 1 incluídas em `04_fase-atual/`.
 - SPECs e tasks seguem a estrutura documental do plugin; a matriz de rastreabilidade está em `04_fase-atual/matriz-de-rastreabilidade.md`. Todos os 24 IDs estão sincronizados com o plano.
 - Stack: Skip + Supabase. Desenvolvimento da fase 1 liberado; go-live não liberado até F1-024.
-- **Progresso da fase 1: 4/24 tasks concluídas (17%). F1-001 (29/09), F1-002 (03/10), F1-003 e F1-004 (15/10/2026) concluídas com teste humano aprovado; F1-005 é a próxima elegível.**
+- **Progresso da fase 1: 5/24 tasks concluídas (21%). F1-001 (29/09), F1-002 (03/10), F1-003, F1-004 e F1-005 (15/10/2026) concluídas com teste humano aprovado; SPEC-F1-01 está 100% concluída (F1-001 a F1-005). Próxima elegível: F1-006 (migrar cadastros/vínculos, SPEC-F1-02).**
 - Fases 2–4 estão no roadmap, ainda sem liberação de implementação.
 - Pasta local, não publicada, sem credenciais ou dados pessoais reais.

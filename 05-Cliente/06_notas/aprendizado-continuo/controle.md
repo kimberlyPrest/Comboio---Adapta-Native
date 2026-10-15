@@ -7,3 +7,4 @@
 - 2026-10-15T16:40:00-03:00 · task F1-003 · capturado · AP-2026-10-15-1640-credencial-bloco-copiavel.md
 - 2026-10-15T17:30:00-03:00 · task F1-004 · capturado · AP-2026-10-15-1730-rollback-camada-faltante.md
 - 2026-10-15T17:31:00-03:00 · task F1-004 · capturado · AP-2026-10-15-1731-ator-via-jwt-chamador.md
+- 2026-10-15T18:40:00-03:00 · task F1-005 · capturado · AP-2026-10-15-1840-snapshot-vs-captura.md

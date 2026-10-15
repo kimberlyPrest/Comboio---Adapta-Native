@@ -1,5 +1,10 @@
 # Histórico do pacote do cliente
 
+## 15/10/2026 — F1-004 concluída
+
+- 2026-10-15 · [Jean Borges Tavares] · Task F1-004 concluída: autorização e convite de interno no Supabase `lwkqsukxefwpreqjdkzg` — Edge Function `admin-manage-internal` (v1, verify_jwt) com a chave service_role apenas no servidor e ator identificado pelo JWT do chamador (`auth.uid()`); RPCs transacionais `admin_register_internal`/`admin_set_internal_status` com revalidação `is_admin_active()` no servidor e endurecimento (revoke de PUBLIC, grant só a authenticated). Convite cria interno `operator/pending` (admin não nasce de convite — procedimento controlado), idempotência por e-mail, ação parcial revertida (rollback real provado antes da camada de permissão: 0 usuários órfãos). Provas S105: convite/ativação/desativação auditados com ator correto (INSERT pending → UPDATE active → UPDATE disabled), operador negado em 403/RLS/P0001 (não cria admin), duplicata idempotente, convite de admin negado; regressão S104 verde (Empresa A vê só a própria). Teste humano aprovado pelo champion em 15/10 17:34. Evidência: `artifacts/f1-004-evidencia.md` (workspace ETHOS). Tela de administração de internos (lista/convite por UI) segue em F1-005.
+- Progresso da fase 1: 4/24 (17%); F1-005 é a próxima elegível.
+
 ## 15/10/2026 — F1-003 concluída + DEBUG
 
 - 2026-10-15 · [Jean Borges Tavares] · Task F1-003 concluída: gate de perfil no Skip 62225 (v0.0.7, QA verde) — sessão consulta `profiles`: `disabled` é deslogado com aviso, `pending` não opera ("Aguardando aprovação"), falha na leitura do perfil bloqueia operação; sem sessão não há acesso (logout encerra de fato); senha mínima 8 no cadastro; falha de rede traduzida para mensagem própria. Provas S103: 8 verdes (4 API + 4 UI) — pendente/desativado/ativo com perfis corretos, credencial inválida genérica, logout revoga, `/dashboard` sem sessão redireciona. Teste humano aprovado pelo champion em 15/10 16:37. Evidência: `artifacts/f1-003-evidencia.md` (workspace ETHOS). Pendência de painel: ativar leaked-password protection (Security → Authentication) — não exposta pelo MCP.

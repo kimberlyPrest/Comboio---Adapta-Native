@@ -1,5 +1,10 @@
 # Histórico do pacote do cliente
 
+## 16/10/2026 — F1-007 concluída
+
+- 2026-10-16 · [Jean Borges Tavares] · Task F1-007 concluída: solicitação de empresa — RPC transacional `request_company_registration` (migração `f1_007_request_company_registration`): cria `companies(pending)` + `company_users(pending)` na mesma transação, idempotente por `auth.uid()` (falha pós-signup retomável — provado), CNPJ duplicado → mensagem segura sem revelar terceiro, CNPJ normalizado, só perfil company solicita, endurecimento (revoke PUBLIC+anon, grant authenticated). Skip 62225 (v0.0.13→v0.0.14): onboarding de papel no 1º login (Empresa/Motorista; interno não é opção), formulário `/company-request` com guard de rota (sessão + company/pending), Dashboard redireciona company/pending sem vínculo ao formulário, `refreshProfile` no hook (re-leitura pós-criação de perfil) + `loading=true` durante releitura (fix de race). Provas: 11 verdes (RED PGRST202; criar/duplicar/retomar/anon 42501/motorista P0001; UI signup→onboarding→formulário→sucesso; banco com audit INSERT ator correto). Teste humano do champion (16/10, manhã): jornada real com e-mail próprio — signup, confirmação por e-mail, onboarding, formulário; CNPJ duplicado bloqueado com mensagem segura (2×), pedido criado com CNPJ livre → "pendente de aprovação"; banco confirma `comboio logistica` pending + vínculo pending + audit ator = champion. DEBUG do teste humano (3 ciclos, 2 defeitos corrigidos): (1) link do e-mail redirecionava para localhost — Site URL do Supabase padrão nunca trocada, pendência de painel (Authentication → URL Configuration), confirmação funcionou; (2) duas contas criadas pelo champion (gmail.com e gmail.com.br), a .br confirmada via SQL; (3) defeito REAL corrigido na v0.0.14: gate tratava "sem perfil" como bloqueio — usuário novo deve ir ao onboarding; provado com conta probe sem perfil (login → onboarding direto). Evidência: `artifacts/f1-007-evidencia.md` (workspace ETHOS). Pendências de painel acumuladas p/ Raysson: Site URL + Redirect URLs (preview) e leaked-password protection.
+- Progresso da fase 1: 7/24 (29%); F1-008 é a próxima elegível.
+
 ## 15/10/2026 — F1-006 concluída
 
 - 2026-10-15 · [Jean Borges Tavares] · Task F1-006 concluída: migrações `f1_006_cadastros_vinculos_v2` + `f1_006_harden_admin_rpcs_anon` no Supabase `lwkqsukxefwpreqjdkzg` (aditivas, fixtures F1-002 intactas) — empresas completas (`cnpj_normalized` UNIQUE, status pending/active/rejected/inactive, trilha de revisão `reviewed_by/at/reason`), `drivers` (1:1 com `auth.users`, `cpf_normalized` UNIQUE), `vehicles` (`plate_normalized` UNIQUE, truck/car/motorcycle), 3 tabelas de vínculo com validade (histórico encerra-se, nunca se apaga), RLS por perfil nas 5 superfícies (motorista vê só si; empresa vê só o próprio contexto; internos gerenciam), auditoria transacional por trigger no padrão F1-002, índices. Provas: 13 verdes — RED (42P01 tabela inexistente), CNPJ/CPF/placa duplicados rejeitados (23505), concorrência de placa com exatamente 1 vencedor (201×409), anon `[]` nas 5 tabelas, Empresa A `[]`, motorista A vê só A e PATCH na linha de B negado, INSERT de veículo por motorista 403, auditoria gravando, anon→RPC admin 42501 (endurecimento), admin→RPC validado. Achado dos advisors corrigido: `anon` tinha EXECUTE explícito nas RPCs admin (default privileges do Supabase; revoke de PUBLIC não cobre grants explícitos) — fechado na migração de endurecimento. Teste humano aprovado pelo champion em 15/10 19:01 (roteiro SQL no painel; 1º relato de erro na query 3 era colagem das queries no mesmo batch — o erro proposital da query 2 abortava o script; sem defeito). Evidência: `artifacts/f1-006-evidencia.md` (workspace ETHOS). Fixtures fictícias: motoristas A/B, Transportadora Beta, veículos ABC1D23/RACE0001.
@@ -36,13 +41,13 @@
 ## 29/09/2026 — Adequação documental de SPECs e tasks
 
 - Quatro SPECs reformatadas com contexto, degrau, limites, dados, fluxo, checklist, critérios, TDD, handoff, tasks vinculadas e emendas.
-- Tabela de 24 tasks ampliada com dono, SPEC, critério, critério, recorte da prova, evidência, pré-condições, ponto de parada e status.
+- Tabela de 24 tasks ampliada com dono, SPEC, critério, recorte da prova, evidência, pré-condições, ponto de parada e status.
 - Matriz de rastreabilidade da fase 1 incluída e cópias sincronizadas com o plano. Escopo e gates preservados sem alteração.
 
 ## 29/09/2026 — Completação da pasta operacional
 
 - Adicionada a cópia com nome explícito `01_projeto/02-Escopo-Definitivo.md`, conferida byte a byte com o escopo do plano.
-- Adicionados objetivo, visão, constituição, decisões, roadmap, sínteses de reunião, índice de documentos, status, notas e área de entregas.
+- Adicionados objetivo, visão, constituição, constituição, decisões, roadmap, sínteses de reunião, índice de documentos, status, notas e área de entregas.
 - Incluída cópia íntegra do DOCX recebido do cliente em `03_documentos/`.
 - Mantidas as quatro SPECs e 24 tasks liberadas para desenvolvimento da fase 1, agora também na estrutura canônica `04_fase-atual/`.
 - Cópias duplicadas do pacote inicial (`01-Escopo.md` e `04-Fase-Atual/`) removidas após conferência; originais e novas cópias canônicas permanecem íntegros no plano e nesta pasta.

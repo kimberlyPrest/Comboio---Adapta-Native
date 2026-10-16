@@ -10,3 +10,4 @@
 - 2026-10-15T18:40:00-03:00 · task F1-005 · capturado · AP-2026-10-15-1840-snapshot-vs-captura.md
 - 2026-10-15T19:05:00-03:00 · task F1-006 · capturado · AP-2026-10-15-1905-negacao-em-transacao-separada.md
 - 2026-10-15T19:06:00-03:00 · task F1-006 · capturado · AP-2026-10-15-1906-revoke-nao-cobre-grants-explicitos.md
+- 2026-10-16T10:40:00-03:00 · task F1-007 · capturado · AP-2026-10-16-1040-fixtures-com-cadeia-completa.md

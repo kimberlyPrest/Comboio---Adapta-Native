@@ -1,6 +1,6 @@
 # Fase 1 — tabela operacional de tasks
 
-Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **10 de 24 tasks concluídas (F1-001 em 29/09, F1-002 em 03/10, F1-003 a F1-006 em 15/10, F1-007 a F1-010 em 16/10/2026); as demais estão planejadas.** A sequência indica pré-condições: apenas tarefas com todas as dependências fechadas podem entrar na leva ativa. Status `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Cada task aponta para uma única SPEC e uma subseção exata. Não criar conta AWS nem comprar equipamento nesta fase. Uso real depende de F1-024.
+Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **11 de 24 tasks concluídas (F1-001 em 29/09, F1-002 em 03/10, F1-003 a F1-006 em 15/10, F1-007 a F1-011 em 16/10/2026); as demais estão planejadas.** A sequência indica pré-condições: apenas tarefas com todas as dependências fechadas podem entrar na leva ativa. Status `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Cada task aponta para uma única SPEC e uma subseção exata. Não criar conta AWS nem comprar equipamento nesta fase. Uso real depende de F1-024.
 
 ## Plataforma e acesso — SPEC-F1-01
 
@@ -21,7 +21,7 @@ Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **10 de 24 tasks
 | F1-008 | Aprovar/rejeitar empresa — **Dados e integrações; Fluxo e regras**. | Implementação | F1-02 | CA-F1-02-02: empresa, perfil e `company_users` mudam atomicamente. | S202; GREEN | RPC, evento e teste de rollback. | F1-004 e F1-007 concluídas; aprovador indicado. | Sem responsável de aprovação. | ☑ 16/10/2026 |
 | F1-009 | Autoinscrição/ativação motorista — **Fluxo e regras**. | Implementação | F1-02 | CA-F1-02-03: pendente não reserva; ativo vê só si. | S203; GREEN | Roteiro mobile e teste de duplicata. | F1-004 e F1-006 concluídas. | Sem verificação do solicitante. | ☑ 16/10/2026 |
 | F1-010 | Veículos/vínculos — **Dados e integrações; Fluxo e regras**. | Implementação | F1-02 | CA-F1-02-04: placa única e vínculo indevido negado. | S204/S205; REGRESSÃO | Teste de banco e evento de vínculo. | F1-008 e F1-009 concluídas. | Vínculo sem aceite/validação. | ☑ 16/10/2026 |
-| F1-011 | E2E dos três cadastros — **Checklist; Critérios de aceite**. | Implementação | F1-02 | CA-F1-02-05: formulários funcionam e não coletam biometria obrigatória. | S205/S206; REGRESSÃO | Relatório e capturas mobile/desktop. | F1-007–F1-010 concluídas. | Coleta extra sem decisão. | ☐ |
+| F1-011 | E2E dos três cadastros — **Checklist; Critérios de aceite**. | Implementação | F1-02 | CA-F1-02-05: formulários funcionam e não coletam biometria obrigatória. | S205/S206; REGRESSÃO | Relatório e capturas mobile/desktop. | F1-007–F1-010 concluídas. | Coleta extra sem decisão. | ☑ 16/10/2026 |
 
 ## Previsões e autosserviço — SPEC-F1-03
 

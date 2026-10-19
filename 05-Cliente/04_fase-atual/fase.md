@@ -1,6 +1,6 @@
 # Fase 1 — tabela operacional de tasks
 
-Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **14 de 24 tasks concluídas (F1-001 em 29/09, F1-002 em 03/10, F1-003 a F1-006 em 15/10, F1-007 a F1-013 em 16/10, F1-014 em 19/10/2026); as demais estão planejadas.** A sequência indica pré-condições: apenas tarefas com todas as dependências fechadas podem entrar na leva ativa. Status `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Cada task aponta para uma única SPEC e uma subseção exata. Não criar conta AWS nem comprar equipamento nesta fase. Uso real depende de F1-024.
+Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **15 de 24 tasks concluídas (F1-001 em 29/09, F1-002 em 03/10, F1-003 a F1-006 em 15/10, F1-007 a F1-013 em 16/10, F1-014 e F1-015 em 19/10/2026); as demais estão planejadas.** A sequência indica pré-condições: apenas tarefas com todas as dependências fechadas podem entrar na leva ativa. Status `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Cada task aponta para uma única SPEC e uma subseção exata. Não criar conta AWS nem comprar equipamento nesta fase. Uso real depende de F1-024.
 
 ## Plataforma e acesso — SPEC-F1-01
 
@@ -30,7 +30,7 @@ Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **14 de 24 tasks
 | F1-012 | Modelo e estados — **Dados e integrações; Fluxo e regras**. | Implementação | F1-03 | CA-F1-03-03: transição/evento atômicos e ilegais negadas. | S304; RED→GREEN | SQL/RPC e testes de estado. | F1-006 concluída. | Estado sem evento ou RPC aberta a externo. | ☑ 16/10/2026 |
 | F1-013 | Autosserviço motorista — **Fluxo e regras; Resultado observável**. | Implementação | F1-03 | CA-F1-03-01: titular cria/edita/cancela sem ocupar vaga. | S301/S307; GREEN | Capturas mobile e teste de vínculo. | F1-009/010/012 concluídas. | Triagem autoconfirmada ou vaga prometida. | ☑ 16/10/2026 |
 | F1-014 | Previsão da empresa — **Fluxo e regras**. | Implementação | F1-03 | CA-F1-02-02: empresa cria só para próprios vínculos. | S302/S307; GREEN | Teste A→B e capturas. | F1-008/010/012 concluídas. | Vínculo não validado. | ☑ 19/10/2026 |
-| F1-015 | Agenda/decisão/criação interna — **Fluxo e regras**. | Implementação | F1-03 | CA-F1-03-02/03: interno cria por terceiro, confirma/recusa/no-show com ator. | S303/S304; GREEN | RPC, eventos e roteiro de agenda. | F1-004/012 concluídas. | Regra de confirmação alterada sem emenda. | ☐ |
+| F1-015 | Agenda/decisão/criação interna — **Fluxo e regras**. | Implementação | F1-03 | CA-F1-03-02/03: interno cria por terceiro, confirma/recusa/no-show com ator. | S303/S304; GREEN | RPC, eventos e roteiro de agenda. | F1-004/012 concluídas. | Regra de confirmação alterada sem emenda. | ☑ 19/10/2026 |
 | F1-016 | Concorrência/idempotência — **Dados e integrações; Fluxo e regras**. | Implementação | F1-03 | CA-F1-03-04: uma atualização vence, outra recebe conflito. | S305/S306; REGRESSÃO | Teste concorrente e histórico. | F1-013–15 concluídas. | Perda silenciosa de atualização. | ☐ |
 | F1-017 | E2E de previsões — **Checklist; Critérios de aceite**. | Implementação | F1-03 | CA-F1-03-05: status/isolamento corretos nos três portais. | S307; REGRESSÃO | Roteiro datado e capturas. | F1-013–16 concluídas. | Vazamento ou ocupação criada por previsão. | ☐ |
 

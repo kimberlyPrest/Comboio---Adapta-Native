@@ -64,7 +64,7 @@
 
 ## 16/10/2026 — F1-011 concluída
 
-- 2026-10-16 · [Jean Borges Tavares] · Task F1-015 concluída: E2E dos três cadastros (regressão, sem build novo) — jornadas completas com contas novas NA PRODUÇÃO (v0.0.21): EMPRESA (signup→onboarding→/company-request→aprovação→home ativa), MOTORISTA (onboarding→/driver-request→ativação→Meus veículos com E2EPL8X), INTERNO (convite→ativação). S205 isolamento verde; S206 mobile+desktop com capturas, sem biometria; lacuna mobile do form de empresa fechada; nenhuma lacuna nova. DEBUG: champion não recebia e-mail de confirmação → conta jean.e2e@ criada/confirmada por SQL; aprovado em 16/10 21:21. Evidência: `artifacts/f1-011-evidencia.md` (7 capturas).
+- 2026-10-16 · [Jean Borges Tavares] · Task F1-011 concluída: E2E dos três cadastros (regressão, sem build novo) — jornadas completas com contas novas NA PRODUÇÃO (v0.0.21): EMPRESA (signup→onboarding→/company-request→aprovação→home ativa), MOTORISTA (onboarding→/driver-request→ativação→Meus veículos com E2EPL8X), INTERNO (convite→ativação). S205 isolamento verde; S206 mobile+desktop com capturas, sem biometria; lacuna mobile do form de empresa fechada; nenhuma lacuna nova. DEBUG: champion não recebia e-mail de confirmação → conta jean.e2e@ criada/confirmada por SQL; aprovado em 16/10 21:21. Evidência: `artifacts/f1-011-evidencia.md` (7 capturas).
 - Progresso da fase 1: 11/24 (46%); **SPEC-F1-02 100% concluída**.
 
 ## 16/10/2026 — F1-010 concluída

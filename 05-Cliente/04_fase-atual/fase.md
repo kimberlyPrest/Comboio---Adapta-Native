@@ -1,6 +1,6 @@
 # Fase 1 — tabela operacional de tasks
 
-Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **20 de 24 tasks concluídas (F1-001 em 29/09, F1-002 em 03/10, F1-003 a F1-006 em 15/10, F1-007 a F1-013 em 16/10, F1-014 a F1-020 em 19/10/2026); as demais estão planejadas.** A sequência indica pré-condições: apenas tarefas com todas as dependências fechadas podem entrar na leva ativa. Status `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Cada task aponta para uma única SPEC e uma subseção exata. Não criar conta AWS nem comprar equipamento nesta fase. Uso real depende de F1-024.
+Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **21 de 24 tasks concluídas (F1-001 em 29/09, F1-002 em 03/10, F1-003 a F1-006 em 15/10, F1-007 a F1-013 em 16/10, F1-014 a F1-021 em 19/10/2026); as demais estão planejadas.** A sequência indica pré-condições: apenas tarefas com todas as dependências fechadas podem entrar na leva ativa. Status `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Cada task aponta para uma única SPEC e uma subseção exata. Não criar conta AWS nem comprar equipamento nesta fase. Uso real depende de F1-024.
 
 ## Plataforma e acesso — SPEC-F1-01
 
@@ -14,7 +14,7 @@ Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **20 de 24 tasks
 
 ## Cadastros — SPEC-F1-02
 
-| ID | Task e subseção da SPEC | Dono | SPEC | Critério binário | Recorte da prova | Evidência esperada | Pré-condições | Ponto de parada | Status |
+| ID | Task e subseção da SPEC | Dono | SPEC | Critério binário | Recorte | Evidência esperada | Pré-condições | Ponto de parada | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | F1-006 | Migrar cadastros/vínculos — **Dados e integrações**. | Implementação | F1-02 | CA-F1-02-01/04: unicidade e RLS passam, sem duplicata. | S201/S204; RED→GREEN | SQL e testes de banco/concorrência. | F1-002 concluída. | Migração destrutiva sem plano de recuperação. | ☑ 15/10/2026 |
 | F1-007 | Solicitação de empresa — **Fluxo e regras**. | Implementação | F1-02 | CA-F1-02-01: pedido pendente sem acesso; retomada idempotência. | S201; GREEN | Captura e teste de falha pós-signup. | F1-003 e F1-006 concluídas. | Pedido concede acesso antes da aprovação. | ☑ 16/10/2026 |
@@ -41,7 +41,7 @@ Versão 2.0 · 29/09/2026. Stack: Skip (goskip.dev) + Supabase. **20 de 24 tasks
 | F1-018 | Modelo de visitas — **Dados e integrações**. | Implementação | F1-04 | CA-F1-04-01/04: visita aberta única e RLS negando externo. | S403/S407; RED→GREEN | SQL e testes concorrentes/RLS. | F1-012 concluída. | Migração apaga histórico. | ☑ 19/10/2026 |
 | F1-019 | Check-in previsto/espontâneo — **Fluxo e regras**. | Implementação | F1-04 | CA-F1-04-01: visita/ocupação únicas, sem reserva fictícia. | S401/S402/S403; GREEN | Eventos e roteiro Skip. | F1-018/011 concluídas. | Entrada depende de facial/cancela. | ☑ 19/10/2026 |
 | F1-020 | Reconciliar provisório — **Dados e integrações; Fluxo e regras**. | Implementação | F1-04 | CA-F1-04-02: mesmo ID/histórico após vínculo. | S404; GREEN | Evento e teste de vínculo. | F1-019 concluída. | Histórico sobrescrito. | ☑ 19/10/2026 |
-| F1-021 | Check-out/exceção — **Fluxo e regras**. | Implementação | F1-04 | CA-F1-04-03: saída única; incompleto exige ator/motivo. | S405; GREEN | Testes e captura. | F1-019 concluída. | Motorista retido sem rota humana. | ☐ |
+| F1-021 | Check-out/exceção — **Fluxo e regras**. | Implementação | F1-04 | CA-F1-04-03: saída única; incompleto exige ator/motivo. | S405; GREEN | Testes e captura. | F1-019 concluída. | Motorista retido sem rota humana. | ☑ 19/10/2026 |
 | F1-022 | Painel/ocupação — **Resultado observável; Fluxo e regras**. | Implementação | F1-04 | CA-F1-04-04: só visitas abertas contadas; externo negado. | S406/S407; REGRESSÃO | Captura e teste de contagem/RLS. | F1-019/021 concluídas. | Capacidade não validada exibida como garantida. | ☐ |
 | F1-023 | Segurança/backup/contingência — **Checklist; Handoff e operação**. | Implementação | F1-04 | CA-F1-04-05: sem crítico aberto; restore e contingência demonstrados. | S403/S407; REGRESSÃO | Relatório, restore e procedimento. | F1-017/022 concluídas. | Vazamento, segredo exposto ou backup irrestaurável. | ☐ |
 | F1-024 | Piloto/aceite — **Critérios de aceite; Handoff e operação**. | Operação Comboio | F1-04 | CA-F1-04-05: quatro jornadas e decisão de uso documentadas. | S408; REGRESSÃO | Ata assinada com pendências. | F1-023 concluída. | Sem aceite explícito, não operar com dados reais. | ☐ |

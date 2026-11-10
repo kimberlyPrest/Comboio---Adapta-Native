@@ -93,7 +93,7 @@ Um carro que ficou 26 h sai com R$ 160 calculado e a quitação registrada em PI
 | Etapa | Prova | Comando/ação | Resultado esperado | Evidência |
 | --- | --- | --- | --- | --- |
 | RED | S901–S910 | `supabase test db` | Falhas esperadas | Saída inicial |
-| GREEN | S901–S910 | Migrações, função, RPC e telas | CA-F2-05-01 a 04 passam | Testes e capturas |
+| GREEN | S901–S910 | Migrações, função, RPC e telas | CA-F2-05-01 a 04 passam | Testes + roteiro |
 | REGRESSÃO | Fase 1 + SPECs F2-02 a 04 + S911 | Testes completos + piloto | Sem quebra; aceite em ata | Relatório e ata |
 
 ## Tasks vinculadas
@@ -101,9 +101,9 @@ Um carro que ficou 26 h sai com R$ 160 calculado e a quitação registrada em PI
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | F2-020 | Parâmetros de preço e função de cálculo | Implementação | F2-05 | CA-F2-05-01 | S901–S905/S910 | Testes SQL | F2-006 | ☐ |
-| F2-021 | Quitação à vista, "a faturar", isenção e exceção | Implementação | F2-05 | CA-F2-05-02 | S906/S907 | Testes + captura | F2-020, F2-009 | ☐ |
-| F2-022 | Check-out condicionado ao acerto | Implementação | F2-05 | CA-F2-05-03 | S908 | Testes + captura | F2-021 | ☐ |
-| F2-023 | Ocupação com capacidade e fechamento do dia | Implementação | F2-05 | CA-F2-05-04 | S909 | Captura + conferência | F2-022, F2-003 | ☐ |
+| F2-021 | Quitação à vista, "a faturar", isenção e exceção | Implementação | F2-05 | CA-F2-05-02 | S906/S907 | Testes | F2-020, F2-009 | ☐ |
+| F2-022 | Check-out condicionado ao acerto | Implementação | F2-05 | CA-F2-05-03 | S908 | Testes | F2-021 | ☐ |
+| F2-023 | Ocupação com capacidade e fechamento do dia | Implementação | F2-05 | CA-F2-05-04 | S909 | Conferência com o cliente | F2-022, F2-003 | ☐ |
 | F2-024 | Segurança, backup e regressão da fase 2 | Implementação | F2-05 | CA-F2-05-05 | S603/S705/S803/S907 | Relatório + restore | F2-019, F2-023 | ☐ |
 | F2-025 | Piloto e aceite da fase 2 | Operação Comboio | F2-05 | CA-F2-05-05 | S911 | Ata com pendências | F2-024, F2-005 | ☐ |
 

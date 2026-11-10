@@ -79,18 +79,18 @@ Um veículo `pronto` é chamado pela fábrica, aparece na fila certa e no telão
 | Etapa | Prova | Comando/ação | Resultado esperado | Evidência |
 | --- | --- | --- | --- | --- |
 | RED | S801–S807 | `supabase test db` + roteiro | Falhas esperadas | Saída inicial |
-| GREEN | S801–S807 | Telas, RLS, Realtime | CA-F2-04-01 a 04 passam | Testes, capturas e vídeo curto do telão |
+| GREEN | S801–S807 | Telas, RLS, Realtime | CA-F2-04-01 a 04 passam | Testes + teste de queda do telão |
 | REGRESSÃO | S603, S705 | Testes anteriores | Sem vazamento | Saída |
 
 ## Tasks vinculadas
 
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| F2-015 | Portal da fábrica (lista, detalhe, laudo) | Implementação | F2-04 | CA-F2-04-01 | S801/S803 | Testes RLS + capturas | F2-014 | ☐ |
-| F2-016 | Chamada para carga/descarga | Implementação | F2-04 | CA-F2-04-02 | S802/S803/S807 | Testes + captura | F2-015 | ☐ |
-| F2-017 | Filas da logística | Implementação | F2-04 | CA-F2-04-04 | S804 | Roteiro + captura | F2-016 | ☐ |
-| F2-018 | Telão da sala de espera | Implementação | F2-04 | CA-F2-04-03 | S802/S805 | Vídeo curto + teste de queda | F2-016 | ☐ |
-| F2-019 | Aviso manual ao motorista por WhatsApp | Implementação | F2-04 | CA-F2-04-04 | S806 | Captura + evento | F2-017 | ☐ |
+| F2-015 | Portal da fábrica (lista, detalhe, laudo) | Implementação | F2-04 | CA-F2-04-01 | S801/S803 | Testes RLS | F2-014 | ☐ |
+| F2-016 | Chamada para carga/descarga | Implementação | F2-04 | CA-F2-04-02 | S802/S803/S807 | Testes | F2-015 | ☐ |
+| F2-017 | Filas da logística | Implementação | F2-04 | CA-F2-04-04 | S804 | Roteiro | F2-016 | ☐ |
+| F2-018 | Telão da sala de espera | Implementação | F2-04 | CA-F2-04-03 | S802/S805 | Teste de queda | F2-016 | ☐ |
+| F2-019 | Aviso manual ao motorista por WhatsApp | Implementação | F2-04 | CA-F2-04-04 | S806 | Evento registrado | F2-017 | ☐ |
 
 ## Emendas
 

@@ -76,8 +76,8 @@ No dia do vencimento, a fatura do contrato aparece pronta na tela, com a lista d
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | F3-009 | Fechamento automático de faturas (job) | Implementação | F3-03 | CA-F3-03-01 | S1201–S1203 | Testes + `cron.job` | F3-007 | ☐ |
 | F3-010 | Fatura imprimível e registro de envio | Implementação | F3-03 | CA-F3-03-02 | S1204 | Fatura exemplo (dados fictícios) | F3-009 | ☐ |
-| F3-011 | Baixa de pagamento | Implementação | F3-03 | CA-F3-03-03 | S1205/S1207 | Testes + captura | F3-009 | ☐ |
-| F3-012 | Pendências e atraso | Implementação | F3-03 | CA-F3-03-03 | S1206 | Captura | F3-011 | ☐ |
+| F3-011 | Baixa de pagamento | Implementação | F3-03 | CA-F3-03-03 | S1205/S1207 | Testes | F3-009 | ☐ |
+| F3-012 | Pendências e atraso | Implementação | F3-03 | CA-F3-03-03 | S1206 | Roteiro | F3-011 | ☐ |
 
 ## Emendas
 

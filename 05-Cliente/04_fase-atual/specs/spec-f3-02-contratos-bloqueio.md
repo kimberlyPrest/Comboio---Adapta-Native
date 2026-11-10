@@ -70,17 +70,17 @@ O comercial cria um contrato com garantia, o Jean aprova, e as placas autorizada
 | Etapa | Prova | Comando/ação | Resultado esperado | Evidência |
 | --- | --- | --- | --- | --- |
 | RED | S1101–S1108 | `supabase test db` | Falhas esperadas | Saída inicial |
-| GREEN | S1101–S1108 | Migrações, RPC e telas | CA-F3-02-01 a 03 passam | Testes e capturas |
+| GREEN | S1101–S1108 | Migrações, RPC e telas | CA-F3-02-01 a 03 passam | Testes + roteiro |
 | REGRESSÃO | S901–S910 | Testes da SPEC-F2-05 | À vista intacto | Saída |
 
 ## Tasks vinculadas
 
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| F3-005 | Contratos, garantias e preços negociados | Implementação | F3-02 | CA-F3-02-01 | S1101/S1102 | Testes + captura | F3-001 | ☐ |
+| F3-005 | Contratos, garantias e preços negociados | Implementação | F3-02 | CA-F3-02-01 | S1101/S1102 | Testes | F3-001 | ☐ |
 | F3-006 | Aprovação e exceção do CEO | Implementação | F3-02 | CA-F3-02-01 | S1102/S1103 | Testes + eventos | F3-005 | ☐ |
 | F3-007 | Cobrança a prazo na saída | Implementação | F3-02 | CA-F3-02-02 | S1104/S1105/S1108 | Testes SQL | F3-006 | ☐ |
-| F3-008 | Bloqueio e desbloqueio de placa | Implementação | F3-02 | CA-F3-02-03 | S1106/S1107 | Testes + captura | F3-001 | ☐ |
+| F3-008 | Bloqueio e desbloqueio de placa | Implementação | F3-02 | CA-F3-02-03 | S1106/S1107 | Testes | F3-001 | ☐ |
 
 ## Emendas
 

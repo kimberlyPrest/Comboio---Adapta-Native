@@ -92,7 +92,7 @@ Todas as transições passam por uma RPC que verifica papel, vínculo e estado d
 | Etapa | Prova | Comando/ação | Resultado esperado | Evidência |
 | --- | --- | --- | --- | --- |
 | RED | S601–S606 | `supabase test db` | Falhas esperadas | Saída inicial |
-| GREEN | S601–S606 | Migrações, RLS, RPC e telas | CA-F2-02-01 a 04 passam | SQL, testes e capturas |
+| GREEN | S601–S606 | Migrações, RLS, RPC e telas | CA-F2-02-01 a 04 passam | SQL e testes |
 | REGRESSÃO | S401–S407 da fase 1 | Testes da fase 1 | Visitas intactas | Saída dos testes |
 
 ## Tasks vinculadas
@@ -100,10 +100,10 @@ Todas as transições passam por uma RPC que verifica papel, vínculo e estado d
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | F2-006 | Linha de base do schema; papéis logística, caixa, fábrica e telão + RLS | Implementação | F2-02 | CA-F2-02-01 | S603/S604 | Baseline + testes RLS | F2-001 | ☐ |
-| F2-007 | Tipos de empresa, unidades e membros da fábrica | Implementação | F2-02 | CA-F2-02-02 | S603 | SQL + captura | F2-006 | ☐ |
-| F2-008 | Modelo e abertura da triagem com cadastro operacional | Implementação | F2-02 | CA-F2-02-03 | S601/S602 | Testes + captura | F2-007 | ☐ |
+| F2-007 | Tipos de empresa, unidades e membros da fábrica | Implementação | F2-02 | CA-F2-02-02 | S603 | SQL + testes | F2-006 | ☐ |
+| F2-008 | Modelo e abertura da triagem com cadastro operacional | Implementação | F2-02 | CA-F2-02-03 | S601/S602 | Testes | F2-007 | ☐ |
 | F2-009 | RPC de estados da triagem e eventos | Implementação | F2-02 | CA-F2-02-04 | S605/S606 | Testes SQL | F2-008 | ☐ |
-| F2-010 | Tela de trabalho da logística | Implementação | F2-02 | CA-F2-02-03/04 | S601/S605 | Roteiro + capturas | F2-009, F2-004 | ☐ |
+| F2-010 | Tela de trabalho da logística | Implementação | F2-02 | CA-F2-02-03/04 | S601/S605 | Roteiro | F2-009, F2-004 | ☐ |
 
 ## Emendas
 

@@ -85,16 +85,16 @@ A logística faz o checklist de um veículo no celular, com foto por item; se tu
 | Etapa | Prova | Comando/ação | Resultado esperado | Evidência |
 | --- | --- | --- | --- | --- |
 | RED | S701–S706 | `supabase test db` + roteiro | Falhas esperadas | Saída inicial |
-| GREEN | S701–S706 | Migrações, Storage, telas e laudo | CA-F2-03-01 a 04 passam | Testes, capturas e laudo exemplo |
+| GREEN | S701–S706 | Migrações, Storage, telas e laudo | CA-F2-03-01 a 04 passam | Testes + laudo exemplo |
 | REGRESSÃO | S603, S605 | Testes da SPEC-F2-02 | Sem vazamento | Saída |
 
 ## Tasks vinculadas
 
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| F2-011 | Modelos de checklist por fábrica (versionados) | Implementação | F2-03 | CA-F2-03-01 | S706 | SQL + captura | F2-007 | ☐ |
-| F2-012 | Execução do checklist no celular com fotos | Implementação | F2-03 | CA-F2-03-02 | S701/S702/S705 | Testes Storage + captura | F2-009, F2-011 | ☐ |
-| F2-013 | Não conformidade e decisão da fábrica | Implementação | F2-03 | CA-F2-03-03 | S703/S704 | Eventos + captura | F2-012 | ☐ |
+| F2-011 | Modelos de checklist por fábrica (versionados) | Implementação | F2-03 | CA-F2-03-01 | S706 | SQL + testes | F2-007 | ☐ |
+| F2-012 | Execução do checklist no celular com fotos | Implementação | F2-03 | CA-F2-03-02 | S701/S702/S705 | Testes Storage | F2-009, F2-011 | ☐ |
+| F2-013 | Não conformidade e decisão da fábrica | Implementação | F2-03 | CA-F2-03-03 | S703/S704 | Eventos registrados | F2-012 | ☐ |
 | F2-014 | Laudo imprimível | Implementação | F2-03 | CA-F2-03-04 | S701/S705 | Laudo exemplo (dados fictícios) | F2-012 | ☐ |
 
 ## Emendas

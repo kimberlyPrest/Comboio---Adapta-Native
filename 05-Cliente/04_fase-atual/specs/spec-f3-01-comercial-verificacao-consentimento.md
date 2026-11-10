@@ -68,7 +68,7 @@ O caixa cadastra um motorista à vista em menos de 2 minutos, com foto da CNH; o
 | Etapa | Prova | Comando/ação | Resultado esperado | Evidência |
 | --- | --- | --- | --- | --- |
 | RED | S1001–S1006 | `supabase test db` | Falhas esperadas | Saída inicial |
-| GREEN | S1001–S1006 | Migrações, Storage e telas | CA-F3-01-01 a 04 passam | Testes e capturas |
+| GREEN | S1001–S1006 | Migrações, Storage e telas | CA-F3-01-01 a 04 passam | Testes + roteiro |
 | REGRESSÃO | Fase 1 e 2 | Testes completos | Sem quebra | Saída |
 
 ## Tasks vinculadas
@@ -76,7 +76,7 @@ O caixa cadastra um motorista à vista em menos de 2 minutos, com foto da CNH; o
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | F3-001 | Papéis comercial e gerência + RLS | Implementação | F3-01 | CA-F3-01-01 | S1002/S1004 | Testes RLS | F2-024 | ☐ |
-| F3-002 | Verificação presencial com fotos de documentos | Implementação | F3-01 | CA-F3-01-02 | S1001/S1003/S1004 | Testes Storage + captura | F3-001 | ☐ |
+| F3-002 | Verificação presencial com fotos de documentos | Implementação | F3-01 | CA-F3-01-02 | S1001/S1003/S1004 | Testes Storage | F3-001 | ☐ |
 | F3-003 | Consentimento de marketing versionado | Implementação | F3-01 | CA-F3-01-03 | S1005/S1006 | Testes + relatório | F3-001 | ☐ |
 | F3-004 | Cadastro rápido à vista no caixa | Implementação | F3-01 | CA-F3-01-04 | S1001/S1002 | Roteiro cronometrado | F3-002 | ☐ |
 

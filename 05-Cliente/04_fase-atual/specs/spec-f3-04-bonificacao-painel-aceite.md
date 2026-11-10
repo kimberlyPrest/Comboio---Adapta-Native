@@ -70,16 +70,16 @@ Um caminhão abastece 250 L, o caixa lança, e na saída o sistema desconta uma 
 | Etapa | Prova | Comando/ação | Resultado esperado | Evidência |
 | --- | --- | --- | --- | --- |
 | RED | S1301–S1307 | `supabase test db` | Falhas esperadas | Saída inicial |
-| GREEN | S1301–S1307 | Migrações, RPC e painel | CA-F3-04-01 e 02 passam | Testes e capturas |
+| GREEN | S1301–S1307 | Migrações, RPC e painel | CA-F3-04-01 e 02 passam | Testes + roteiro |
 | REGRESSÃO | Fases 1–3 + S1308 | Testes completos + piloto | Sem quebra; aceite em ata | Relatório e ata |
 
 ## Tasks vinculadas
 
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| F3-013 | Lançamento de abastecimento pelo caixa | Implementação | F3-04 | CA-F3-04-01 | S1301/S1302/S1305 | Testes + captura | F3-001 | ☐ |
+| F3-013 | Lançamento de abastecimento pelo caixa | Implementação | F3-04 | CA-F3-04-01 | S1301/S1302/S1305 | Testes | F3-001 | ☐ |
 | F3-014 | Crédito de estadia e uso na saída | Implementação | F3-04 | CA-F3-04-01 | S1303/S1304 | Testes SQL | F3-013 | ☐ |
-| F3-015 | Painel gerencial | Implementação | F3-04 | CA-F3-04-02 | S1306/S1307 | Captura + conferência | F3-012, F3-014 | ☐ |
+| F3-015 | Painel gerencial | Implementação | F3-04 | CA-F3-04-02 | S1306/S1307 | Conferência com o cliente | F3-012, F3-014 | ☐ |
 | F3-016 | Segurança, backup e regressão da fase 3 | Implementação | F3-04 | CA-F3-04-03 | S1004/S1107/S1207/S1307 | Relatório + restore | F3-015, F3-004, F3-008 | ☐ |
 | F3-017 | Piloto e aceite da fase 3 | Operação Comboio | F3-04 | CA-F3-04-03 | S1308 | Ata com pendências | F3-016, F2-025 | ☐ |
 

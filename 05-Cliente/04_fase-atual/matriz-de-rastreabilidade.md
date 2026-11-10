@@ -4,10 +4,10 @@ Versão 1.0 · 10/11/2026. Projeção das mesmas 42 tasks do [fase.md](fase.md) 
 
 | Fase | Origem no escopo | SPEC | Critério | Task | Prova da SPEC | Evidência | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2 | §§6, 14 | F2-01 | CA-F2-01-01 | F2-001 | S502/S505 | Captura de erro tratado + build falhando com campo errado | ☐ |
-| 2 | §§6, 14 | F2-01 | CA-F2-01-04 | F2-002 | S503 | Capturas 390/1440 | ☐ |
-| 2 | §§6, 14 | F2-01 | CA-F2-01-04 | F2-003 | S503 | Capturas antes/depois | ☐ |
-| 2 | §§6, 14 | F2-01 | CA-F2-01-03 | F2-004 | S504 | Capturas 390 px | ☐ |
+| 2 | §§6, 14 | F2-01 | CA-F2-01-01 | F2-001 | S502/S505 | Erro forçado mostra mensagem + build falhando com campo errado | ☐ |
+| 2 | §§6, 14 | F2-01 | CA-F2-01-04 | F2-002 | S503 | Conferência no código (L1, L8) | ☐ |
+| 2 | §§6, 14 | F2-01 | CA-F2-01-04 | F2-003 | S503 | Busca no código (L2) | ☐ |
+| 2 | §§6, 14 | F2-01 | CA-F2-01-03 | F2-004 | S504 | Conferência no código + teste do "Reabrir" | ☐ |
 | 2 | §§6, 14 | F2-01 | CA-F2-01-02/05 | F2-005 | S501/S503 | Roteiro aprovado | ☐ |
 | 2 | §§3, 5.6, 14 | F2-02 | CA-F2-02-01 | F2-006 | S603/S604 | Baseline + testes RLS | ☐ |
 | 2 | §§3, 5.6, 14 | F2-02 | CA-F2-02-02 | F2-007 | S603 | SQL + captura | ☐ |

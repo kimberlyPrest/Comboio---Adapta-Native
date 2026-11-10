@@ -8,10 +8,10 @@ Como executar: pegue a primeira task com todas as pré-condições `☑`. Antes 
 
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| F2-001 | Registrar a F1-024; *error boundary* e tipos gerados (L7, L9) | Implementação | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-01 | S502/S505 | Captura de erro tratado + build falhando com campo errado | — | ☐ |
-| F2-002 | `AppShell` das telas logadas (L1, L8) | Implementação | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-04 | S503 | Capturas 390/1440 | F2-001 | ☐ |
-| F2-003 | Escala de texto e placa (L2, L3) | Implementação | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-04 | S503 | Capturas antes/depois | F2-002 | ☐ |
-| F2-004 | Cards e barra de ações (L4) | Implementação | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-03 | S504 | Capturas 390 px | F2-003 | ☐ |
+| F2-001 | Registrar a F1-024; *error boundary* e tipos gerados (L7, L9) | Implementação | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-01 | S502/S505 | Erro forçado mostra mensagem + build falhando com campo errado | — | ☐ |
+| F2-002 | `AppShell` das telas logadas (L1, L8) | Implementação | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-04 | S503 | Conferência no código (L1, L8) | F2-001 | ☐ |
+| F2-003 | Escala de texto e placa (L2, L3) | Implementação | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-04 | S503 | Busca no código (L2) | F2-002 | ☐ |
+| F2-004 | Cards e barra de ações (L4) | Implementação | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-03 | S504 | Conferência no código + teste do "Reabrir" | F2-003 | ☐ |
 | F2-005 | Dividir `homes.tsx`; resultado no lugar e busca fixa; aprovação (L5, L6, L10) | Implementação + Comboio | [F2-01](specs/spec-f2-01-layout-usabilidade.md) | CA-F2-01-02/05 | S501/S503 | Roteiro aprovado | F2-004 | ☐ |
 | F2-006 | Linha de base do schema; papéis logística, caixa, fábrica e telão + RLS | Implementação | [F2-02](specs/spec-f2-02-perfis-fabricas-triagem.md) | CA-F2-02-01 | S603/S604 | Baseline + testes RLS | F2-001 | ☐ |
 | F2-007 | Tipos de empresa, unidades e membros da fábrica | Implementação | [F2-02](specs/spec-f2-02-perfis-fabricas-triagem.md) | CA-F2-02-02 | S603 | SQL + captura | F2-006 | ☐ |

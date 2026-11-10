@@ -38,14 +38,14 @@ As telas da fase 1 passam no roteiro de usabilidade no celular (390 px) e no com
 
 | ID | Regra | Como verificar |
 | --- | --- | --- |
-| L1 | Telas logadas usam um `AppShell` próprio: barra superior fixa (marca, perfil, sair), conteúdo a partir do topo, sem fundo animado, largura útil de até 1440 px; o painel interno usa grade de 2–3 colunas no computador | Captura em 1440 px sem faixa vazia maior que 25% da largura |
-| L2 | Texto base de 16 px no celular; dados-chave (placa, status, nome) em peso 600–700; `text-[10px]`/`text-[11px]` só em rótulos auxiliares, nunca em dado ou botão | Busca no código + captura em 390 px |
-| L3 | Placa sempre em destaque (fonte maior, negrito, caixa alta) em cards, listas e detalhes | Captura |
-| L4 | Card com cabeçalho (placa + status), corpo e **barra de ações separada**: alvo de toque de 44 px ou mais (`h-11`), espaço mínimo de 8 px, quebra em coluna no celular, ação principal destacada; as de risco (Recusar, No-show) ficam num menu "mais ações" e pedem confirmação; cada botão abre o diálogo que o nome promete | Captura em 390 px; teste do "Reabrir" |
+| L1 | Telas logadas usam um `AppShell` próprio: barra superior fixa (marca, perfil, sair), conteúdo a partir do topo, sem fundo animado, largura útil de até 1440 px; o painel interno usa grade de 2–3 colunas no computador | No código: telas logadas não usam o `Layout` do login nem `max-w-[560px]` |
+| L2 | Texto base de 16 px no celular; dados-chave (placa, status, nome) em peso 600–700; `text-[10px]`/`text-[11px]` só em rótulos auxiliares, nunca em dado ou botão | Busca no código: nenhum dado ou botão com `text-[10px]`/`text-[11px]`/`text-xs` |
+| L3 | Placa sempre em destaque (fonte maior, negrito, caixa alta) em cards, listas e detalhes | Componente único de placa usado em todas as telas |
+| L4 | Card com cabeçalho (placa + status), corpo e **barra de ações separada**: alvo de toque de 44 px ou mais (`h-11`), espaço mínimo de 8 px, quebra em coluna no celular, ação principal destacada; as de risco (Recusar, No-show) ficam num menu "mais ações" e pedem confirmação; cada botão abre o diálogo que o nome promete | No código: botões de ação com `h-11`; teste do "Reabrir" |
 | L5 | Depois de qualquer ação, o card atualiza no lugar e aparece um aviso curto, sem rolar para o topo; formulários longos em etapas ou seções recolhíveis | Roteiro: registrar chegada e saída sem procurar o resultado |
-| L6 | Busca por placa/CPF fixa no topo do painel interno | Captura |
+| L6 | Busca por placa/CPF fixa no topo do painel interno | Uso no roteiro |
 | L7 | *Error boundary* global e um por seção do painel: erro mostra mensagem em português com "tentar de novo", **nunca tela branca**; falha registrada no console sem dado pessoal | Forçar erro de render, de rede e de permissão |
-| L8 | Estados vazios e de carregamento explícitos, nunca zero falso | Captura |
+| L8 | Estados vazios e de carregamento explícitos, nunca zero falso | Uso no roteiro |
 | L9 | `types.ts` gerado do Supabase (`supabase gen types`) e usado nas consultas; o build falha com campo ou tabela inexistentes | Build com um campo errado proposital falha |
 | L10 | `homes.tsx` dividido em arquivos por perfil e por seção (ex.: `pages/internal/Agenda.tsx`, `pages/company/Home.tsx`), sem mudar o comportamento | Nenhum arquivo de página acima de 600 linhas; roteiros da fase 1 passam |
 
@@ -79,7 +79,8 @@ As telas da fase 1 passam no roteiro de usabilidade no celular (390 px) e no com
 ## Checklist de execução
 
 - [ ] F1-024 registrada (pergunta 1).
-- [ ] L1–L10 aplicadas, com capturas antes e depois.
+- [ ] L1–L10 aplicadas e conferidas no código.
+- [ ] Não é preciso tirar print das telas; a prova é a conferência no código e o uso pelo cliente.
 - [ ] S501–S505 comprovados.
 - [ ] Roteiro de usabilidade aprovado pelo cliente.
 
@@ -95,18 +96,18 @@ As telas da fase 1 passam no roteiro de usabilidade no celular (390 px) e no com
 
 | Etapa | Prova | Ação | Resultado esperado | Evidência |
 | --- | --- | --- | --- | --- |
-| RED | S501–S505 nas telas atuais | Capturas e erro forçado | Problemas C1–C7 reproduzidos | Capturas antes |
-| GREEN | S501–S505 | Aplicar L1–L10 | Critérios 01–04 passam | Capturas depois |
+| RED | S502/S505 | Erro forçado nas telas atuais | Tela branca reproduzida | Passos anotados |
+| GREEN | S501–S505 | Aplicar L1–L10 | Critérios 01–04 passam | Conferência no código + roteiro com o cliente |
 | REGRESSÃO | S401–S406 | Rodar os roteiros da fase 1 | Nenhuma regra quebrada | Roteiro assinado |
 
 ## Tasks vinculadas
 
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| F2-001 | Registrar a F1-024; *error boundary* e tipos gerados (L7, L9) | Implementação | F2-01 | CA-F2-01-01 | S502/S505 | Captura de erro tratado + build falhando com campo errado | — | ☐ |
-| F2-002 | `AppShell` das telas logadas (L1, L8) | Implementação | F2-01 | CA-F2-01-04 | S503 | Capturas 390/1440 | F2-001 | ☐ |
-| F2-003 | Escala de texto e placa (L2, L3) | Implementação | F2-01 | CA-F2-01-04 | S503 | Capturas antes/depois | F2-002 | ☐ |
-| F2-004 | Cards e barra de ações (L4) | Implementação | F2-01 | CA-F2-01-03 | S504 | Capturas 390 px | F2-003 | ☐ |
+| F2-001 | Registrar a F1-024; *error boundary* e tipos gerados (L7, L9) | Implementação | F2-01 | CA-F2-01-01 | S502/S505 | Erro forçado mostra mensagem + build falhando com campo errado | — | ☐ |
+| F2-002 | `AppShell` das telas logadas (L1, L8) | Implementação | F2-01 | CA-F2-01-04 | S503 | Conferência no código (L1, L8) | F2-001 | ☐ |
+| F2-003 | Escala de texto e placa (L2, L3) | Implementação | F2-01 | CA-F2-01-04 | S503 | Busca no código (L2) | F2-002 | ☐ |
+| F2-004 | Cards e barra de ações (L4) | Implementação | F2-01 | CA-F2-01-03 | S504 | Conferência no código + teste do "Reabrir" | F2-003 | ☐ |
 | F2-005 | Dividir `homes.tsx`; resultado no lugar e busca fixa; aprovação (L5, L6, L10) | Implementação + Comboio | F2-01 | CA-F2-01-02/05 | S501/S503 | Roteiro aprovado | F2-004 | ☐ |
 
 ## Emendas

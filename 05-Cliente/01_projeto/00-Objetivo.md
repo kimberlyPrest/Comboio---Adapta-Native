@@ -1,7 +1,7 @@
 # Objetivo do projeto
 
-Dar à Comboio uma base única para cadastrar empresas, motoristas e veículos, receber previsões de chegada e registrar o movimento real do pátio. O objetivo operacional é reduzir erros da planilha compartilhada, permitir que o motorista já cadastrado informe sua chegada pelo celular e dar à equipe visibilidade de quem foi previsto, chegou e saiu.
+Fazer o pátio do condomínio logístico da Comboio **operar e faturar** com controle: cada veículo registrado da entrada à saída, cada estadia e triagem calculada e quitada, e as fábricas acompanhando e chamando seus caminhões pelo portal. O objetivo inclui reduzir os erros da planilha compartilhada, evitar desvio no recebimento e criar a base para a venda cruzada do posto.
 
-O sistema não deve obrigar reserva: a operação relatada pelo cliente recebe caminhões sem agendamento. A primeira entrega usa o Skip para a interface e o Supabase para autenticação, dados e regras de acesso. A triagem e a automação física são evoluções separadas.
+O sistema não obriga reserva: a operação recebe caminhões sem agendamento. A interface roda no Skip e os dados, a autenticação e as regras de acesso, no Supabase. Equipamentos físicos (cancela, botoeira, leitura de placa) e facial são a última fase.
 
-Resultado verificável da fase 1: empresa aprovada e motorista ativo conseguem fazer solicitações dentro de seus perfis; a equipe interna recebe veículos previstos e espontâneos, registra entrada/saída e consulta o histórico sem exposição entre empresas. Os critérios completos estão no [escopo definitivo](02-Escopo-Definitivo.md) e nas [SPECs](../04_fase-atual/specs/00-INDICE.md).
+Resultado verificável por fase: ver o [roadmap](05-Roadmap.md) e o [escopo definitivo](02-Escopo-Definitivo.md).

@@ -1,6 +1,6 @@
 # Comboio — escopo definitivo do sistema de cadastros e previsões de chegada
 
-Versão 1.0 · 29/09/2026 · Documento de execução sujeito às decisões explicitamente marcadas como **a validar**.
+Versão 2.0 · 10/11/2026 (v1.0 em 29/09/2026) · Documento de execução sujeito às decisões explicitamente marcadas como **a validar**. A v2.0 reorganiza as fases 2–5 para incluir cobrança, perfis operacionais e o portal da fábrica, conforme o documento do cliente de 26/09 (ver §14).
 
 ## 1. Resultado esperado e recorte
 
@@ -109,11 +109,12 @@ Quando ativada a fase de triagem, a visita passa pelos estados de cadastro opera
 | Fase | Capacidades entregues | Resultado demonstrável e aceite |
 | --- | --- | --- |
 | **1 — Uso imediato: cadastro e previsão** | Base central; login e permissões; formulários separados de empresa, motorista e interno; veículo; empresa com aprovação; motorista mobile; criação/consulta/cancelamento de previsão; agenda interna; registro de chegada espontânea e check-in/check-out manual; auditoria básica. | Empresa solicita cadastro e é aprovada; motorista previamente cadastrado faz uma previsão; interno confirma, recebe veículo com e sem previsão e encerra visita; cada perfil só vê os dados autorizados. |
-| **2 — Operação logística e triagem** | Cadastro operacional, checklists configuráveis por contratante, fotos/laudo, estados, filas, visão da empresa e chamada; painel de ocupação e exceções refinado. | Veículo de triagem percorre chegada, checklist, aprovação, chamada e saída, com histórico e isolamento de dados entre contratantes. |
-| **3 — Identificação facial com AWS** | Cadastro biométrico opcional, verificação facial por integração com Amazon Rekognition, política de confiança, revisão/fallback humano, exclusão de referência biométrica e trilha; estudo e, se justificado, prova de vivacidade. | Piloto controlado identifica motorista recorrente sem impedir o fluxo por falha ou recusa da biometria; falsos positivos/negativos e tempos de resposta medidos; privacidade aprovada antes de ativação. |
-| **4 — Acesso físico e comunicações** | Integração homologada com equipamento escolhido, sinal de autorização, leitura de ticket/placa se aprovada, notificações automáticas e procedimentos de contingência. | Teste presencial de entrada/saída com equipamento, falha de rede, falta de energia, ticket inválido e liberação manual documentada. |
+| **2 — Triagem, portal da fábrica e acerto à vista** | Ajustes de layout e usabilidade da fase 1; perfis internos de logística e caixa; unidades/fábricas e vínculo do contratante; cadastro operacional de carga/descarga; checklist configurável por contratante com OK/não conformidade, foto por item e laudo; estados da triagem; portal da fábrica com acompanhamento e chamada; filas separadas de carga e descarga; telão da sala de espera; cálculo de estadia e de triagem e registro manual da quitação à vista na saída; ocupação com capacidade e alerta acima de 90%. | Veículo de triagem percorre chegada, cadastro operacional, checklist, pronto, chamada pela fábrica, telão, operação, acerto e saída, com laudo, histórico e isolamento entre contratantes; veículo de estadia avulsa sai com valor calculado e quitação registrada. |
+| **3 — Caixa, contratos e gestão** | Perfil comercial; contrato a prazo com garantia real e aprovação do CEO; preço negociado por cliente; fatura do período gerada na tela e enviada manualmente; bloqueio de placa por pendência; bonificação por abastecimento com litros digitados pelo caixa; foto de CNH e do documento do veículo na verificação presencial; consentimento de marketing com data/hora; painel gerencial de receita, pendências e uso por cliente. | Cliente a prazo usa o pátio sem passar pelo caixa e recebe fatura correta do período; abastecimento ≥ limite gera uma estadia grátis; placa bloqueada aparece para o caixa; gerência vê receita e pendências do período. |
+| **4 — Notificações e integrações de software** | WhatsApp/e-mail automáticos (chegada, pronto, chamada, conclusão, fatura) por canal e fornecedor aprovados; integração Promoflex/WebPosto para bonificação automática e envio da base com consentimento; leitura de NF por foto com confirmação do operador. | Chamada chega ao motorista sem ação manual; período paralelo mostra divergência zero entre litros digitados e recebidos; falha de integração volta ao lançamento manual sem parar o pátio. |
+| **5 — Acesso físico e biometria** | Integração homologada com ticket/botoeira/cancela do fornecedor escolhido; leitura de placa se aprovada; cadastro biométrico opcional e verificação facial com Amazon Rekognition (§8), com alternativa humana. | Teste presencial de entrada/saída com equipamento, falha de rede, falta de energia, ticket inválido, rosto não reconhecido e liberação manual documentada; privacidade aprovada antes de ativar biometria. |
 
-Cada fase exige demonstração com dados de teste, validação dos atores operacionais e correção de defeitos impeditivos antes da próxima. As fases 3 e 4 não são requisitos para a fase 1 entrar em uso. Nenhum prazo de calendário ou preço de implantação é fixado sem acesso ao ambiente, responsáveis e volume esperado.
+Cada fase exige demonstração com dados de teste, validação dos atores operacionais e correção de defeitos impeditivos antes da próxima. As fases 3 a 5 não são requisitos para as anteriores entrarem em uso. Se o equipamento físico chegar antes, a fase 5 pode ser antecipada, desde que haja decisão registrada. Nenhum prazo de calendário ou preço de implantação é fixado sem acesso ao ambiente, responsáveis e volume esperado.
 
 ## 8. Reconhecimento facial com AWS — desenho e limites
 
@@ -135,21 +136,23 @@ O serviço candidato é **Amazon Rekognition**: coleção de referências faciai
 
 ## 10. Fora do escopo inicial
 
-Pagamento online, TEF, conciliação bancária, faturamento automático, emissão de NF-e, integração com WebPosto/Promoflex, campanhas de marketing, cálculo definitivo de estadia/bonificação, OCR de nota fiscal, agendamento de doca com capacidade garantida, atribuição de vaga numerada, reconhecimento facial e abertura física de cancela. Funcionalidades de fases futuras deste documento não estão incluídas no aceite da fase 1.
+Em todo o projeto: pagamento online, TEF, conciliação bancária, emissão de NF-e, campanhas de marketing (o disparo; a base com consentimento entra na fase 3), agendamento de doca com capacidade garantida e atribuição de vaga numerada. Cálculo de estadia e quitação manual entram na fase 2; contratos, faturas e bonificação, na fase 3; integração WebPosto/Promoflex e OCR de NF, na fase 4; facial e cancela, na fase 5. Funcionalidades de uma fase não entram no aceite da anterior.
 
 ## 11. Decisões pendentes e dependências
 
 | ID | Decisão/insumo | Dono sugerido | Impacto |
 | --- | --- | --- | --- |
 | D1 | Uma previsão de estacionamento é automática, pendente ou exige aprovação? Há cota por janela? | Jean + operação | Política de reserva e mensagens ao motorista |
-| D2 | Quem confirma triagem: contratante, logística ou ambos? Quem pode chamar veículo? | Jean + clientes-piloto | Permissões e fluxo da fase 2 |
+| D2 | ~~Quem confirma triagem e quem chama veículo?~~ **Resolvida pelo DOCX de 26/09 (confirmar na liberação):** a logística faz o cadastro operacional e o checklist; a fábrica chama pelo portal; a não conformidade não bloqueia e quem decide é o contratante. | Jean | Fase 2 |
 | D3 | Qual canal viável para ativar motorista sem e-mail? | Operação + TI | Inclusão digital e autenticação |
 | D4 | Quais campos são realmente obrigatórios para empresa, motorista, veículo, carga e descarga? | Operação + contratantes | Formulários, importação e privacidade |
 | D5 | Como tratar não comparecimento, atrasos, reprogramação e cancelamento após check-in? | Operação | Estados e métricas da agenda |
-| D6 | Números de vagas (500 caminhões, 100 carros, 100 motos) e comportamento em lotação. | Jean + operação | Ocupação e alertas |
-| D7 | Regras de cobrança/isenção e responsável pelo acerto, se forem incorporadas depois. O DOCX conflita entre “até 24h” e fórmula que chega a 26h. | Jean + caixa | Futuro módulo financeiro; não bloqueia fase 1 |
+| D6 | ~~Vagas e lotação.~~ **Resolvida pelo DOCX:** 500 caminhões, 100 carros e 100 motos; alerta visual acima de 90%, sem bloqueio. Valores parametrizáveis. | Jean | Fase 2 |
+| D7 | Regra de estadia: tolerância de 2 h; R$ 80 por estadia; a tabela do DOCX diz "acima de 2 h até 24 h = 1", mas a fórmula só cobra a 2ª estadia depois de 26 h. **Até a decisão, o sistema aplica a tabela** (`ceil(permanência/24h)` quando passar de 2 h), com parâmetros editáveis. Quem paga a triagem (R$ 100, inclui a permanência) é definido por contratante. | Jean + caixa | Fase 2 (cálculo) |
 | D8 | Fornecedor/equipamento, tipo de câmera, interface, rede, segurança física e custos AWS. | Comboio + TI + fornecedor | Fases 3 e 4 |
-| D9 | Documentos de processos reais, planilha, formulários e checklists prometidos na reunião. | Comboio | Detalhamento e aceite da fase 2 |
+| D9 | Checklists reais de cada fábrica. **Não bloqueia o desenvolvimento:** o checklist é configurável por contratante, e o modelo inicial usa os itens citados em 18/09 (elétrica/seta, sirene de ré, para-brisa, emissão de poluentes, pneus, limpeza da carroceria). O conteúdo real de pelo menos uma fábrica é necessário para o aceite. | Comboio | Aceite da fase 2 |
+| D11 | Há TV/monitor na sala de espera para o telão? Quais fábricas/unidades entram primeiro? | Comboio | Aceite da fase 2 |
+| D12 | Validade do crédito de estadia por abastecimento (sugestão do DOCX: 30 dias) e limite de litros (200 L). | Jean + Rayson | Fase 3 |
 | D10 | Quem é controlador/operador dos dados, política de retenção e fundamento do tratamento biométrico. | Comboio + responsável por privacidade | Liberação da fase 3 |
 
 As decisões pendentes não autorizam improviso técnico. A fase 1 pode começar com parâmetros conservadores: reserva como previsão não garantida, triagem sempre pendente de confirmação e chegada espontânea sempre registrável.
@@ -169,4 +172,28 @@ As decisões pendentes não autorizam improviso técnico. A fase 1 pode começar
 - Documento do cliente “Sistema de Automação do Pátio de Estacionamento”, datado de 26/09/2026: referência de funcionalidades e regras **propostas**, não prova de validação operacional.
 - Re-alinhamento de 18/09/2026 registrado na pasta do projeto: pivô do escopo financeiro para pátio e triagem.
 - Referências técnicas e de privacidade: [AWS Rekognition — IndexFaces](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html), [AWS Rekognition — SearchFacesByImage](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html), [AWS Rekognition Face Liveness](https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html), [AWS AI Service Card — Face Matching](https://docs.aws.amazon.com/ai/responsible-ai/rekognition-face-matching/overview.html) e [Glossário da ANPD — dado pessoal sensível](https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/glossario-anpd).
+- Revisão v2.0 (10/11/2026): leitura da 2ª consultoria (29/09), da call de acompanhamento (28/10) e do DOCX completo; ver §14.
 - Referências da stack: [Skip — integração com Supabase](https://docs.goskip.dev/introduction/faq/), [Supabase Auth](https://supabase.com/docs/guides/auth/passwords), [Supabase Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security) e [Supabase Edge Functions e segredos](https://supabase.com/docs/guides/functions/secrets).
+
+## 14. Revisão v2.0 — 10/11/2026
+
+**Por que mudou.** O documento do cliente de 26/09 ("Sistema de Automação do Pátio de Estacionamento") descreve um negócio cujo valor está em **operar e faturar o pátio** e em **vender a triagem às fábricas**. A v1.0 deixou a cobrança fora de todas as fases e colocou o facial antes do que gera receita. A fase 1 continua válida como fundação (acesso, cadastros, visitas, ocupação e auditoria).
+
+**O que mudou:**
+
+1. Fases reorganizadas de 4 para 5 (§7): a 2 passa a incluir o acerto à vista e o portal da fábrica; a 3 trata de caixa, contratos e gestão; a 4, de notificações e integrações de software; a 5, de hardware e facial.
+2. Perfis internos novos a partir da fase 2 (complementam §3, sem remover os existentes):
+
+| Perfil | Fase | Pode | Não pode |
+| --- | --- | --- | --- |
+| Logística (interno) | 2 | Cadastro operacional de carga/descarga, checklist com fotos, mover estados da triagem, iniciar/concluir operação, receber a triagem à vista e liberar a saída da triagem | Contratos, crédito, preços, quitação de estadia |
+| Caixa (interno) | 2 | Consultar visita/ticket, ver valor calculado, registrar quitação à vista (dinheiro, PIX, cartão) e liberar a saída; na fase 3, lançar litros | Alterar preço, criar contrato, desbloquear placa |
+| Fábrica/contratante (portal) | 2 | Ver só os veículos destinados às suas unidades, em todas as fases; ver o laudo; chamar para carga ou descarga | Ver outras unidades/fábricas; alterar cadastro ou laudo |
+| Comercial (interno) | 3 | Cadastro completo, contratos a prazo após análise de crédito, preço negociado, bloqueio/desbloqueio de placa | Aprovar crédito sem o CEO |
+| Gerência | 2 (ocupação) / 3 (receita) | Painel completo e aprovações | — |
+
+3. "Empresa" passa a distinguir **fábrica/contratante** (tem unidades, portal e checklist), **transportadora** e **frota/proprietário**. O cadastro de empresa da fase 1 é reaproveitado com um tipo de relação e com unidades.
+4. Previsão de chegada e autosserviço do motorista continuam funcionando, mas sem novos investimentos: a operação real não usa agendamento (22/09), e o cadastro do motorista exige verificação presencial (29/09).
+5. D2 e D6 foram resolvidas pelo DOCX; D7 ganhou regra provisória parametrizável; D9 deixou de bloquear o desenvolvimento (§11).
+
+**Fontes:** DOCX de 26/09; ata de 18/09; ata de 22/09; transcrição de 29/09; call de acompanhamento de 28/10; leitura do código (v0.0.50) e revisão de 10/11.

@@ -1,12 +1,11 @@
 # Status da pasta do cliente
 
-Atualizado em 20/10/2026.
+Atualizado em 10/11/2026.
 
-- [Escopo definitivo completo](01_projeto/02-Escopo-Definitivo.md) incluído e conferido contra a fonte.
-- Quatro SPECs e 24 tasks da fase 1 incluídas em `04_fase-atual/`.
-- SPECs e tasks seguem a estrutura documental do plugin; a matriz de rastreabilidade está em `04_fase-atual/matriz-de-rastreabilidade.md`. Todos os 24 IDs estão sincronizados com o plano.
-- Stack: Skip + Supabase. Desenvolvimento da fase 1 liberado; go-live não liberado até F1-024.
-- **Progresso da fase 1: 23/24 tasks concluídas (96%). F1-001 (29/09), F1-002 (03/10), F1-003 a F1-006 (15/10), F1-007 a F1-013 (16/10), F1-014 a F1-021 (19/10), F1-022 e F1-023 (20/10/2026) concluídas com teste humano aprovado; SPEC-F1-01 100%, SPEC-F1-02 100%, SPEC-F1-03 100% e SPEC-F1-04 em 6/7. Próxima elegível: F1-024 (piloto/aceite) — a última da fase, com a operação real.**
-- Produção publicada a partir da F1-010 (login-posto-comboio-a8a05.goskip.app) — todo fechamento de task publica a produção.
-- Fases 2–4 estão no roadmap, ainda sem liberação de implementação.
-- Pasta local, não publicada, sem credenciais ou dados pessoais reais.
+- **Fase 1 concluída (24/24).** O cliente informou em 28/10 que finalizou a F1-024; a ata do piloto é registrada no início da F2-001. A fase 1 está arquivada em `05_entregas/fase-1/`.
+- **Escopo definitivo v2.0** (10/11/2026): fases reorganizadas para incluir a cobrança e o portal da fábrica (§§7 e 14).
+- **Fases 2 e 3 liberadas em 10/11/2026:** 9 SPECs e 42 tasks em `04_fase-atual/`. Próxima elegível: **F2-001** (registrar a F1-024; tratamento de erro e tipos gerados).
+- A fase 2 começa pelos ajustes de layout pedidos em 28/10.
+- Produção: login-posto-comboio-a8a05.goskip.app; todo fechamento de task publica a produção.
+- Fases 4 e 5 no roadmap, sem liberação de implementação.
+- Pasta sem credenciais nem dados pessoais reais.

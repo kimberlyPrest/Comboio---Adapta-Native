@@ -9,14 +9,14 @@ Pacote local criado em 29/09/2026 e completado após revisão. **Não foi public
 | [01_projeto](01_projeto/00-Objetivo.md) | Objetivo, visão, escopo definitivo, constituição, decisões e roadmap |
 | [02_reunioes](02_reunioes/00-INDICE.md) | Registros sintéticos dos alinhamentos que afetam este projeto |
 | [03_documentos](03_documentos/00-INDICE.md) | Índice e leitura do documento recebido do cliente |
-| [04_fase-atual](04_fase-atual/fase.md) | 24 tasks de implementação, [quatro SPECs](04_fase-atual/specs/00-INDICE.md) e [matriz de rastreabilidade](04_fase-atual/matriz-de-rastreabilidade.md) |
-| [05_entregas](05_entregas/README.md) | Evidências e entregas esperadas da implementação |
+| [04_fase-atual](04_fase-atual/fase.md) | Fases 2 e 3: 42 tasks, [nove SPECs](04_fase-atual/specs/00-INDICE.md) e [matriz de rastreabilidade](04_fase-atual/matriz-de-rastreabilidade.md) |
+| [05_entregas](05_entregas/README.md) | Evidências e a fase 1 arquivada em `fase-1/` |
 | [06_notas](06_notas/README.md) | Pontos de acompanhamento e decisões futuras |
 | [STATUS.md](STATUS.md) e [changelog.md](changelog.md) | Estado e alterações deste pacote |
 
 ## O que está liberado
 
-Fase 1: desenvolvimento do cadastro de empresa, motorista e equipe interna, previsões de chegada, agenda, check-in/out manuais e ocupação real. **Não** equivale a liberação para operação com dados reais; essa depende da task F1-024 e do aceite da Comboio. Fases 2–4 constam no escopo, mas suas SPECs e tasks ainda dependem dos insumos e decisões nele listados.
+Em 10/11/2026: **fase 2** (layout, triagem, portal da fábrica, chamada, telão e acerto à vista) e **fase 3** (comercial, contratos a prazo, faturas, bloqueio de placa, bonificação e painel gerencial), conforme o [escopo definitivo v2.0](01_projeto/02-Escopo-Definitivo.md). A fase 1 (24/24) está arquivada em `05_entregas/fase-1/`. Fases 4 e 5 constam no escopo, sem SPECs.
 
 ## Origem e privacidade
 

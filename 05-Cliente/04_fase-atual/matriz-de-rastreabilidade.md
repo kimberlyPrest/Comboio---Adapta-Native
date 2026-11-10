@@ -1,34 +1,48 @@
-# Matriz de rastreabilidade — fase 1
+# Matriz de rastreabilidade — fases 2 e 3
 
-Versão 1.0 · 29/09/2026. Projeção das mesmas 24 tasks da tabela operacional, Jornada e seções “Tasks vinculadas” das quatro SPECs. `☐` = planejada; `◐` = em andamento; `☑` = concluída com prova. Escopo de quatro fases preservado conforme orientação do cliente; esta matriz cobre apenas a fase em foco. Não constitui gate de aprovação.
+Versão 1.0 · 10/11/2026. Projeção das mesmas 42 tasks do [fase.md](fase.md) e das seções "Tasks vinculadas" das SPECs.
 
 | Fase | Origem no escopo | SPEC | Critério | Task | Prova da SPEC | Evidência | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | §§1–3, 7, 9 | F1-01 | CA-F1-01-01 | F1-001 | S101 | Captura/configuração | ☐ |
-| 1 | §§1–3, 7, 9 | F1-01 | CA-F1-01-02/03 | F1-002 | S102/S104 | SQL/testes RLS | ☐ |
-| 1 | §§1–3, 7, 9 | F1-01 | CA-F1-01-02/05 | F1-003 | S103 | Roteiro Auth | ☐ |
-| 1 | §§1–3, 7, 9 | F1-01 | CA-F1-01-03/04 | F1-004 | S104/S105 | Policies/função/auditoria | ☐ |
-| 1 | §§1–3, 7, 9 | F1-01 | CA-F1-01-05 | F1-005 | S103/S105 | Capturas por perfil | ☐ |
-| 1 | §§3–5, 9 | F1-02 | CA-F1-02-01/04 | F1-006 | S201/S204 | SQL/testes de unicidade | ☐ |
-| 1 | §§3–5, 9 | F1-02 | CA-F1-02-01 | F1-007 | S201 | Captura/teste retomada | ☐ |
-| 1 | §§3–5, 9 | F1-02 | CA-F1-02-02 | F1-008 | S202 | RPC/auditoria | ☐ |
-| 1 | §§3–5, 9 | F1-02 | CA-F1-02-03 | F1-009 | S203 | Captura mobile/teste | ☐ |
-| 1 | §§3–5, 9 | F1-02 | CA-F1-02-04 | F1-010 | S204/S205 | Teste vínculo/RLS | ☐ |
-| 1 | §§3–5, 9 | F1-02 | CA-F1-02-05 | F1-011 | S205/S206 | E2E/capturas | ☐ |
-| 1 | §§1, 5.3, 6–7 | F1-03 | CA-F1-03-03 | F1-012 | S304 | SQL/testes de estados | ☐ |
-| 1 | §§1, 5.3, 6–7 | F1-03 | CA-F1-03-01 | F1-013 | S301/S307 | Captura mobile/teste | ☐ |
-| 1 | §§1, 5.3, 6–7 | F1-03 | CA-F1-03-02 | F1-014 | S302/S307 | Teste A→B/captura | ☐ |
-| 1 | §§1, 5.3, 6–7 | F1-03 | CA-F1-03-02/03 | F1-015 | S303/S304 | RPC/eventos/agenda | ☐ |
-| 1 | §§1, 5.3, 6–7 | F1-03 | CA-F1-03-04 | F1-016 | S305/S306 | Teste concorrência | ☐ |
-| 1 | §§1, 5.3, 6–7 | F1-03 | CA-F1-03-05 | F1-017 | S307 | E2E/capturas | ☐ |
-| 1 | §§2, 5.4–5.5, 6–7, 9 | F1-04 | CA-F1-04-01/04 | F1-018 | S403/S407 | SQL/testes RLS | ☐ |
-| 1 | §§2, 5.4–5.5, 6–7, 9 | F1-04 | CA-F1-04-01 | F1-019 | S401/S402/S403 | Eventos/roteiro | ☐ |
-| 1 | §§2, 5.4–5.5, 6–7, 9 | F1-04 | CA-F1-04-02 | F1-020 | S404 | Evento/teste vínculo | ☐ |
-| 1 | §§2, 5.4–5.5, 6–7, 9 | F1-04 | CA-F1-04-03 | F1-021 | S405 | Teste/captura | ☐ |
-| 1 | §§2, 5.4–5.5, 6–7, 9 | F1-04 | CA-F1-04-04 | F1-022 | S406/S407 | Contagem/RLS | ☐ |
-| 1 | §§2, 5.4–5.5, 6–7, 9 | F1-04 | CA-F1-04-05 | F1-023 | S403/S407 | Relatório/restore | ☐ |
-| 1 | §§2, 5.4–5.5, 6–7, 9 | F1-04 | CA-F1-04-05 | F1-024 | S408 | Ata do piloto | ☐ |
-
-## Regras de sincronização
-
-Ao mudar status/ID, atualizar nesta ordem: `01.Fase_1/00-Tasks_Gerais.md`, `00.tasks_per_fase/fase_1.md`, seção `## Tasks vinculadas` da SPEC e esta matriz. IDs de task `F1-xxx` e UUIDs da Jornada são imutáveis. Critério ou prova novos exigem alteração da SPEC antes da task.
+| 2 | §§6, 14 | F2-01 | CA-F2-01-01 | F2-001 | S502/S505 | Captura de erro tratado + build falhando com campo errado | ☐ |
+| 2 | §§6, 14 | F2-01 | CA-F2-01-04 | F2-002 | S503 | Capturas 390/1440 | ☐ |
+| 2 | §§6, 14 | F2-01 | CA-F2-01-04 | F2-003 | S503 | Capturas antes/depois | ☐ |
+| 2 | §§6, 14 | F2-01 | CA-F2-01-03 | F2-004 | S504 | Capturas 390 px | ☐ |
+| 2 | §§6, 14 | F2-01 | CA-F2-01-02/05 | F2-005 | S501/S503 | Roteiro aprovado | ☐ |
+| 2 | §§3, 5.6, 14 | F2-02 | CA-F2-02-01 | F2-006 | S603/S604 | Baseline + testes RLS | ☐ |
+| 2 | §§3, 5.6, 14 | F2-02 | CA-F2-02-02 | F2-007 | S603 | SQL + captura | ☐ |
+| 2 | §§3, 5.6, 14 | F2-02 | CA-F2-02-03 | F2-008 | S601/S602 | Testes + captura | ☐ |
+| 2 | §§3, 5.6, 14 | F2-02 | CA-F2-02-04 | F2-009 | S605/S606 | Testes SQL | ☐ |
+| 2 | §§3, 5.6, 14 | F2-02 | CA-F2-02-03/04 | F2-010 | S601/S605 | Roteiro + capturas | ☐ |
+| 2 | §§5.6, 11, 14 | F2-03 | CA-F2-03-01 | F2-011 | S706 | SQL + captura | ☐ |
+| 2 | §§5.6, 11, 14 | F2-03 | CA-F2-03-02 | F2-012 | S701/S702/S705 | Testes Storage + captura | ☐ |
+| 2 | §§5.6, 11, 14 | F2-03 | CA-F2-03-03 | F2-013 | S703/S704 | Eventos + captura | ☐ |
+| 2 | §§5.6, 11, 14 | F2-03 | CA-F2-03-04 | F2-014 | S701/S705 | Laudo exemplo (dados fictícios) | ☐ |
+| 2 | §§6, 7, 14 | F2-04 | CA-F2-04-01 | F2-015 | S801/S803 | Testes RLS + capturas | ☐ |
+| 2 | §§6, 7, 14 | F2-04 | CA-F2-04-02 | F2-016 | S802/S803/S807 | Testes + captura | ☐ |
+| 2 | §§6, 7, 14 | F2-04 | CA-F2-04-04 | F2-017 | S804 | Roteiro + captura | ☐ |
+| 2 | §§6, 7, 14 | F2-04 | CA-F2-04-03 | F2-018 | S802/S805 | Vídeo curto + teste de queda | ☐ |
+| 2 | §§6, 7, 14 | F2-04 | CA-F2-04-04 | F2-019 | S806 | Captura + evento | ☐ |
+| 2 | §§5.5, 7, 11, 14 | F2-05 | CA-F2-05-01 | F2-020 | S901–S905/S910 | Testes SQL | ☐ |
+| 2 | §§5.5, 7, 11, 14 | F2-05 | CA-F2-05-02 | F2-021 | S906/S907 | Testes + captura | ☐ |
+| 2 | §§5.5, 7, 11, 14 | F2-05 | CA-F2-05-03 | F2-022 | S908 | Testes + captura | ☐ |
+| 2 | §§5.5, 7, 11, 14 | F2-05 | CA-F2-05-04 | F2-023 | S909 | Captura + conferência | ☐ |
+| 2 | §§5.5, 7, 11, 14 | F2-05 | CA-F2-05-05 | F2-024 | S603/S705/S803/S907 | Relatório + restore | ☐ |
+| 2 | §§5.5, 7, 11, 14 | F2-05 | CA-F2-05-05 | F2-025 | S911 | Ata com pendências | ☐ |
+| 3 | §§7, 14 | F3-01 | CA-F3-01-01 | F3-001 | S1002/S1004 | Testes RLS | ☐ |
+| 3 | §§7, 14 | F3-01 | CA-F3-01-02 | F3-002 | S1001/S1003/S1004 | Testes Storage + captura | ☐ |
+| 3 | §§7, 14 | F3-01 | CA-F3-01-03 | F3-003 | S1005/S1006 | Testes + relatório | ☐ |
+| 3 | §§7, 14 | F3-01 | CA-F3-01-04 | F3-004 | S1001/S1002 | Roteiro cronometrado | ☐ |
+| 3 | §§7, 14 | F3-02 | CA-F3-02-01 | F3-005 | S1101/S1102 | Testes + captura | ☐ |
+| 3 | §§7, 14 | F3-02 | CA-F3-02-01 | F3-006 | S1102/S1103 | Testes + eventos | ☐ |
+| 3 | §§7, 14 | F3-02 | CA-F3-02-02 | F3-007 | S1104/S1105/S1108 | Testes SQL | ☐ |
+| 3 | §§7, 14 | F3-02 | CA-F3-02-03 | F3-008 | S1106/S1107 | Testes + captura | ☐ |
+| 3 | §§7, 14 | F3-03 | CA-F3-03-01 | F3-009 | S1201–S1203 | Testes + `cron.job` | ☐ |
+| 3 | §§7, 14 | F3-03 | CA-F3-03-02 | F3-010 | S1204 | Fatura exemplo (dados fictícios) | ☐ |
+| 3 | §§7, 14 | F3-03 | CA-F3-03-03 | F3-011 | S1205/S1207 | Testes + captura | ☐ |
+| 3 | §§7, 14 | F3-03 | CA-F3-03-03 | F3-012 | S1206 | Captura | ☐ |
+| 3 | §§7, 11, 14 | F3-04 | CA-F3-04-01 | F3-013 | S1301/S1302/S1305 | Testes + captura | ☐ |
+| 3 | §§7, 11, 14 | F3-04 | CA-F3-04-01 | F3-014 | S1303/S1304 | Testes SQL | ☐ |
+| 3 | §§7, 11, 14 | F3-04 | CA-F3-04-02 | F3-015 | S1306/S1307 | Captura + conferência | ☐ |
+| 3 | §§7, 11, 14 | F3-04 | CA-F3-04-03 | F3-016 | S1004/S1107/S1207/S1307 | Relatório + restore | ☐ |
+| 3 | §§7, 11, 14 | F3-04 | CA-F3-04-03 | F3-017 | S1308 | Ata com pendências | ☐ |
